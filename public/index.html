@@ -19,18 +19,23 @@
       line-height: 1.6;
     }
 
+    /* Nav with full width background */
+    nav {
+      width: 100%;
+      background: linear-gradient(to right, #ff4500, #ff9900);
+    }
+
+    /* Nav inner container constrained width and centered */
     nav > div {
       max-width: 900px;
       margin: 0 auto;
       padding: 1rem 2rem;
-      background: linear-gradient(to right, #ff4500, #ff9900);
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: white;
       font-weight: bold;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      border-radius: 8px 8px 0 0;
     }
 
     nav > div > div:first-child {
@@ -47,14 +52,21 @@
       text-decoration: underline;
     }
 
+    /* Header with full width background */
+    header {
+      width: 100%;
+      background: linear-gradient(to right, #ff4500, #ff9900);
+      padding: 2rem 0; /* shorter vertical padding */
+      margin-bottom: 2rem;
+    }
+
+    /* Header inner container constrained width and centered */
     header > div {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 2rem 2rem;
-      background: linear-gradient(to right, #ff4500, #ff9900);
-      color: white;
       text-align: center;
-      border-radius: 0 0 8px 8px;
+      color: white;
+      padding: 0 2rem;
     }
 
     header h1 {
@@ -172,7 +184,7 @@
     </ul>
   </section>
 
-  <!-- Add your other content sections here -->
+  <!-- Other sections -->
 
   <footer>
     <p>
@@ -185,3 +197,4 @@
 
 </body>
 </html>
+
