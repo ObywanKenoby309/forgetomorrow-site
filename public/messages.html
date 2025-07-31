@@ -19,50 +19,7 @@
       flex-direction: column;
     }
 
-    /* Navigation */
-    nav {
-      width: 100%;
-      background: linear-gradient(to right, #ff4500, #ff9900);
-      padding: 1rem 0;
-    }
-    nav > div {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      font-weight: bold;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.5rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
-    header {
-      width: 100%;
-      background: linear-gradient(to right, #ff4500, #ff9900);
-      padding: 2rem 0;
-      margin-bottom: 1rem;
-    }
-    header > div {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      text-align: center;
-      color: white;
-    }
-    header h1 {
-      font-size: 3rem;
-    }
-
-    /* Messages container */
+    /* Messages page styles */
     main {
       max-width: 900px;
       margin: 0 auto;
@@ -74,7 +31,6 @@
       height: calc(100vh - 160px); /* nav + header + some padding */
     }
 
-    /* Threads list */
     .threads {
       width: 300px;
       background: #1a1a1a;
@@ -112,7 +68,6 @@
       align-self: flex-end;
     }
 
-    /* Chat area */
     .chat {
       flex-grow: 1;
       display: flex;
@@ -152,8 +107,6 @@
       margin-top: 0.25rem;
       text-align: right;
     }
-
-    /* Input area */
     .input-area {
       display: flex;
       gap: 0.5rem;
@@ -184,24 +137,6 @@
       background: #e03d00;
     }
 
-    /* Footer */
-    footer {
-      background: #111;
-      color: #888;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-    }
-    footer a {
-      color: #ff9900;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-
     /* Responsive */
     @media (max-width: 700px) {
       main {
@@ -222,26 +157,8 @@
 </head>
 <body>
 
-  <nav>
-    <div>
-      <div>ForgeTomorrow</div>
-      <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="features.html">Features</a>
-        <a href="feed.html">Feed</a>
-        <a href="support.html">Support</a>
-        <a href="messages.html">Messages</a>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <div>
-      <h1>Instant Messages</h1>
-      <p>Connect and chat with your community.</p>
-    </div>
-  </header>
+  <!-- Placeholder for header -->
+  <div id="header-placeholder"></div>
 
   <main>
     <div class="threads" id="threads">
@@ -281,33 +198,30 @@
     </div>
   </main>
 
-  <footer>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="features.html">Features</a> |
-      <a href="feed.html">Feed</a> |
-      <a href="support.html">Support</a> |
-      <a href="messages.html">Messages</a>
-    </p>
-    <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
-  </footer>
+  <!-- Placeholder for footer -->
+  <div id="footer-placeholder"></div>
 
   <script>
-    // Simple thread switching logic
+    // Load header and footer HTML dynamically
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading header:', err));
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading footer:', err));
+
+    // Thread switching logic
     const threads = document.querySelectorAll('.thread');
     const messagesEl = document.getElementById('messages');
     threads.forEach(thread => {
       thread.addEventListener('click', () => {
-        // Remove active class from all threads
         threads.forEach(t => t.classList.remove('active'));
-        // Add active class to clicked thread
         thread.classList.add('active');
-
-        // Load messages for selected thread (placeholder)
         const threadId = thread.getAttribute('data-id');
         messagesEl.innerHTML = '';
-
         if(threadId === '1') {
           messagesEl.innerHTML = `
             <div class="message received">Hey Eric! Excited about ForgeTomorrow?<div class="time">10:15 AM</div></div>
@@ -327,7 +241,7 @@
       });
     });
 
-    // Sending new messages (adds to current chat only)
+    // Send new message logic
     const sendBtn = document.getElementById('send-btn');
     const messageInput = document.getElementById('message-input');
 
