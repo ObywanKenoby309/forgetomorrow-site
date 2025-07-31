@@ -20,22 +20,14 @@
     }
 
     nav {
-      position: relative;
-      /* no padding here, padding is inside the container div */
-    }
-
-    nav > div:first-child {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 50px; /* height of the orange gradient banner */
       background: linear-gradient(to right, #ff4500, #ff9900);
-      z-index: -1;
+      width: 100%;
     }
 
-    nav > div:last-child {
+    nav > div {
       max-width: 900px;
       margin: 0 auto;
-      padding: 1.5rem 2rem; /* keep original padding for nav content */
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,7 +36,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    nav > div:last-child div:first-child {
+    nav > div > div:first-child {
       font-size: 1.5rem;
     }
 
@@ -58,10 +50,19 @@
       text-decoration: underline;
     }
 
+    /* Short orange banner below nav */
+    .sub-banner {
+      max-width: 900px;
+      margin: 0 auto;
+      height: 40px; /* Adjust height here */
+      background: linear-gradient(to right, #ff4500, #ff9900);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
     header {
       padding: 4rem 2rem 3rem;
       text-align: center;
-      background: linear-gradient(to right, #ff4500, #ff9900);
       color: #fff;
     }
 
@@ -148,15 +149,18 @@
 </head>
 <body>
 
-<nav style="max-width: 900px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to right, #ff4500, #ff9900); color: white; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <div style="font-size: 1.5rem;">ForgeTomorrow</div>
-  <div>
-    <a href="index.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">Home</a>
-    <a href="about.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">About</a>
-    <a href="features.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">Features</a>
-  </div>
-</nav>
+  <nav>
+    <div>
+      <div>ForgeTomorrow</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+      </div>
+    </div>
+  </nav>
 
+  <div class="sub-banner"></div>
 
   <header>
     <h1>ForgeTomorrow</h1>
@@ -177,7 +181,7 @@
     </ul>
   </section>
 
-  <!-- Additional sections you had before go here -->
+  <!-- Add your other content sections here -->
 
   <footer>
     <p>
