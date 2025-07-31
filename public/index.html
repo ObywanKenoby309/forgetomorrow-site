@@ -19,14 +19,11 @@
       line-height: 1.6;
     }
 
+    /* NAVIGATION - constrained width banner */
     nav {
-      background: linear-gradient(to right, #ff4500, #ff9900);
-      width: 100%;
-    }
-
-    nav > div {
       max-width: 900px;
       margin: 0 auto;
+      background: linear-gradient(to right, #ff4500, #ff9900);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -34,9 +31,10 @@
       color: white;
       font-weight: bold;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 8px 8px 0 0; /* optional rounded corners */
     }
 
-    nav > div > div:first-child {
+    nav div:first-child {
       font-size: 1.5rem;
     }
 
@@ -50,20 +48,21 @@
       text-decoration: underline;
     }
 
-    /* Short orange banner below nav */
-    .sub-banner {
-      max-width: 900px;
-      margin: 0 auto;
-      height: 40px; /* Adjust height here */
+    /* HEADER - full width background, shorter height */
+    header {
+      width: 100%;
       background: linear-gradient(to right, #ff4500, #ff9900);
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
+      padding: 2rem 0 2rem 0; /* shorter vertical padding */
+      margin-bottom: 2rem;
     }
 
-    header {
-      padding: 4rem 2rem 3rem;
+    /* Header content constrained width */
+    header > div {
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
       color: #fff;
+      padding: 0 2rem;
     }
 
     header h1 {
@@ -73,6 +72,27 @@
 
     header p {
       font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cta button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #ff4500;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta button:hover {
+      background: #e03d00;
     }
 
     section {
@@ -124,47 +144,28 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    .cta {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .cta button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      background: #ff4500;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .cta button:hover {
-      background: #e03d00;
-    }
   </style>
 </head>
 <body>
 
-  <nav style="max-width: 900px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to right, #ff4500, #ff9900); color: white; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <div style="font-size: 1.5rem;">ForgeTomorrow</div>
-  <div>
-    <a href="index.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">Home</a>
-    <a href="about.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">About</a>
-    <a href="features.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">Features</a>
-  </div>
-</nav>
+  <nav>
+    <div>ForgeTomorrow</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+    </div>
+  </nav>
 
-<header style="padding: 4rem 2rem 3rem; text-align: center; background: linear-gradient(to right, #ff4500, #ff9900); color: #fff;">
-  <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">ForgeTomorrow</h1>
-  <p style="font-size: 1.2rem;">Jobs. Not noise.</p>
-  <div style="display: flex; justify-content: center; margin-top: 2rem;">
-    <button style="padding: 1rem 2rem; font-size: 1rem; background: #ff4500; border: none; border-radius: 5px; color: #fff; cursor: pointer; transition: background 0.3s;" onclick="alert('Coming soon!')">Join the Waitlist</button>
-  </div>
-</header>
+  <header>
+    <div>
+      <h1>ForgeTomorrow</h1>
+      <p>Jobs. Not noise.</p>
+      <div class="cta">
+        <button onclick="alert('Coming soon!')">Join the Waitlist</button>
+      </div>
+    </div>
+  </header>
 
   <section>
     <h2>We built this for the forgotten.</h2>
@@ -190,3 +191,4 @@
 
 </body>
 </html>
+
