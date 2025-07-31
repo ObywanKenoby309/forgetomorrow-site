@@ -7,83 +7,48 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom, #1a1a1a, #000);
       color: #f5f5f5;
       line-height: 1.6;
-    }
-
-    /* Nav with full width background */
-    nav {
-      width: 100%;
-      background: linear-gradient(to right, #ff4500, #ff9900);
-    }
-
-    /* Nav inner container constrained width and centered */
-    nav > div {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
+      min-height: 100vh;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      font-weight: bold;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      flex-direction: column;
     }
-
-    nav > div > div:first-child {
-      font-size: 1.5rem;
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
     }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.5rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header with full width background */
-    header {
-      width: 100%;
-      background: linear-gradient(to right, #ff4500, #ff9900);
-      padding: 2rem 0; /* shorter vertical padding */
-      margin-bottom: 2rem;
-    }
-
-    /* Header inner container constrained width and centered */
-    header > div {
-      max-width: 900px;
-      margin: 0 auto;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff9900;
       text-align: center;
-      color: white;
-      padding: 0 2rem;
     }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+    ul li::before {
+      content: "•";
+      color: #ff4500;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
-
     .cta {
       display: flex;
       justify-content: center;
     }
-
     .cta button {
       padding: 1rem 2rem;
       font-size: 1rem;
@@ -94,42 +59,9 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     .cta button:hover {
       background: #e03d00;
     }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ff9900;
-      text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    ul li::before {
-      content: "•";
-      color: #ff4500;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
     footer {
       background: #111;
       color: #888;
@@ -138,13 +70,11 @@
       font-size: 0.9rem;
       margin-top: 3rem;
     }
-
     footer a {
       color: #ff9900;
       text-decoration: none;
       margin: 0 0.5rem;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
@@ -152,24 +82,13 @@
 </head>
 <body>
 
-  <nav>
-    <div>
-      <div>ForgeTomorrow</div>
-      <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="features.html">Features</a>
-        <a href="feed.html">Feed</a>
-        <a href="messages.html">Messages</a>
-        <a href="support.html">Support</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
 
-  <header>
-    <div>
-      <h1>ForgeTomorrow</h1>
-      <p>Jobs. Not noise.</p>
+  <header style="width: 100%; background: linear-gradient(to right, #ff4500, #ff9900); padding: 2rem 0; margin-bottom: 2rem;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center; color: white; padding: 0 2rem;">
+      <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">ForgeTomorrow</h1>
+      <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Jobs. Not noise.</p>
       <div class="cta">
         <button onclick="alert('Coming soon!')">Join the Waitlist</button>
       </div>
@@ -187,17 +106,21 @@
     </ul>
   </section>
 
-  <!-- Other sections -->
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
 
-  <footer>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="features.html">Features</a>
-    </p>
-    <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
-  </footer>
+  <script>
+    // Load header and footer dynamically
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading header:', err));
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 
 </body>
 </html>
-
