@@ -47,7 +47,11 @@
     }
     .cta {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
     }
     .cta button {
       padding: 1rem 2rem;
@@ -58,6 +62,8 @@
       color: #fff;
       cursor: pointer;
       transition: background 0.3s;
+      width: 200px;
+      max-width: 90vw;
     }
     .cta button:hover {
       background: #e03d00;
@@ -91,6 +97,7 @@
       <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Jobs. Not noise.</p>
       <div class="cta">
         <button onclick="alert('Coming soon!')">Join the Waitlist</button>
+        <button onclick="alert('Become a Founder coming soon!')">Become a Founder</button>
       </div>
     </div>
   </header>
