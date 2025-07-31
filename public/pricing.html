@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ForgeTomorrow - Pricing Plans</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #1a1a1a, #000);
+      color: #f5f5f5;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #ff9900;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    p.intro {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #ccc;
+    }
+    .plans-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .plan-card {
+      background: #222;
+      border-radius: 8px;
+      padding: 2rem;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .plan-card:hover,
+    .plan-card.selected {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+      border: 2px solid #ff4500;
+    }
+    .plan-card h3 {
+      color: #ff4500;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9900;
+      text-align: center;
+      margin-bottom: 1rem;
+      min-height: 3rem;
+    }
+    .price small {
+      display: block;
+      font-size: 1rem;
+      color: #aaa;
+      margin-top: 0.3rem;
+    }
+    ul.features {
+      list-style: none;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      color: #ddd;
+    }
+    ul.features li {
+      margin-bottom: 0.75rem;
+      position: relative;
+      padding-left: 1.2em;
+      font-size: 0.95rem;
+    }
+    ul.features li::before {
+      content: "✔";
+      color: #ff4500;
+      position: absolute;
+      left: 0;
+    }
+    .select-button {
+      background: #ff4500;
+      border: none;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .select-button:hover {
+      background: #e03d00;
+    }
+    .free-note {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 3rem;
+      color: #bbb;
+    }
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #ff9900;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      section {
+        padding: 2rem 1rem;
+      }
+      .plans-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .plan-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
+
+  <section>
+    <h1>Pricing Plans</h1>
+    <p class="intro">
+      All accounts start free with core features. Upgrade anytime to unlock advanced tools tailored to your needs.
+    </p>
+
+    <div class="free-note">
+      <strong>Free Plan:</strong> Access trusted job boards, smart filters, private notes, custom themes, and ethical data use at no cost.
+    </div>
+
+    <div class="plans-container" role="list" aria-label="Pricing plans">
+
+      <!-- Job Seeker Plan -->
+      <article class="plan-card" role="listitem" tabindex="0" aria-selected="false" aria-label="Job Seeker Pro plan for $29.99 per month">
+        <h3>Job Seeker Pro</h3>
+        <div class="price">
+          $29.99 <small>/ month</small><br />
+          $239.88 <small>/ year (save 33%)</small>
+        </div>
+        <ul class="features">
+          <li>5 InMail credits per month</li>
+          <li>Limited profile browsing</li>
+          <li>See who viewed your profile (last year)</li>
+          <li>Open profiles</li>
+          <li>Top applicant job recommendations</li>
+          <li>Company insights</li>
+          <li>Resume insights</li>
+          <li>Access to 22,000+ learning courses</li>
+          <li>Full access to interview prep tools</li>
+        </ul>
+        <button class="select-button" aria-label="Select Job Seeker Pro plan">Select Plan</button>
+      </article>
+
+      <!-- Coach/Mentor Plan -->
+      <article class="plan-card" role="listitem" tabindex="0" aria-selected="false" aria-label="Coach and Mentor plan, pricing varies per event">
+        <h3>Coach & Mentor</h3>
+        <div class="price">
+          $5–50 <small>per event</small>
+        </div>
+        <ul class="features">
+          <li>Access to coaching marketplace</li>
+          <li>Tools to grow your audience</li>
+          <li>Vetted and trusted network</li>
+          <li>Event access for growth & visibility</li>
+          <li>Referral tracking</li>
+          <li>Connection customizer with video/voice intros</li>
+        </ul>
+        <button class="select-button" aria-label="Select Coach and Mentor plan">Select Plan</button>
+      </article>
+
+      <!-- Small Business Plan -->
+      <article class="plan-card" role="listitem" tabindex="0" aria-selected="false" aria-label="Small Business plan with pay-per-post options">
+        <h3>Small Business</h3>
+        <div class="price">
+          Starting at $9.99 <small>per post</small>
+        </div>
+        <ul class="features">
+          <li>Pay-per-post job listings</li>
+          <li>Limited recruiter tools</li>
+          <li>Access to referral tracker</li>
+          <li>Company insights</li>
+          <li>Unlimited profile browsing</li>
+        </ul>
+        <button class="select-button" aria-label="Select Small Business plan">Select Plan</button>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading header:', err));
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading footer:', err));
+
+    // Optional: Add select plan button interaction
+    const buttons = document.querySelectorAll('.select-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        alert(`You selected the ${button.previousElementSibling.previousElementSibling.textContent.trim()} plan!`);
+      });
+    });
+  </script>
+
+</body>
+</html>
