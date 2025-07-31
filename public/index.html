@@ -134,10 +134,20 @@
   </style>
 </head>
 <body>
-  <header>
+<header>
+  <nav style="max-width: 900px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to right, #ff4500, #ff9900); color: white; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div style="font-size: 1.5rem;">ForgeTomorrow</div>
+    <div>
+      <a href="index.html" style="color: white; text-decoration: none; margin-right: 1.5rem;">Home</a>
+      <a href="about.html" style="color: white; text-decoration: none;">About</a>
+    </div>
+  </nav>
+  <div style="text-align: center; padding: 3rem 2rem; color: white;">
     <h1>ForgeTomorrow</h1>
     <p>Jobs. Not noise.</p>
-  </header>
+  </div>
+</header>
+
 
   <section>
     <h2>We built this for the forgotten.</h2>
@@ -181,14 +191,15 @@
     <div id="founder-message"></div>
   </section>
 
-  <footer>
-    <p>
-      <a href="#">About</a> |
-      <a href="#">Support</a> |
-      <a href="#">Contact</a>
-    </p>
-    <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
-  </footer>
+<footer style="background: #111; color: #888; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; margin-top: auto;">
+  <p>
+    <a href="index.html" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Home</a> |
+    <a href="about.html" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">About</a> |
+    <a href="#" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Support</a> |
+    <a href="#" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Contact</a>
+  </p>
+  <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
+</footer>
 
   <script>
     function handleSubmit(event, formType) {
