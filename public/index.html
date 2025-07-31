@@ -22,7 +22,7 @@
     nav {
       max-width: 900px;
       margin: auto;
-      padding: 0.5rem 2rem; /* Reduced padding */
+      padding: 0.75rem 2rem; /* Reduced padding for thinner banner */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,20 +46,23 @@
       text-decoration: underline;
     }
 
-    header > div {
-      padding: 1.5rem 2rem 1rem; /* Reduced padding for banner */
+    header {
+      padding: 4rem 2rem 3rem; /* Keep original header padding */
       text-align: center;
-      color: white;
+      background: linear-gradient(to right, #ff4500, #ff9900);
+      color: #fff;
     }
 
-    header > div h1 {
+    header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
 
-    header > div p {
+    header p {
       font-size: 1.2rem;
     }
+
+    /* rest of your styles ... */
   </style>
 </head>
 <body>
@@ -74,10 +77,8 @@
   </nav>
 
   <header>
-    <div>
-      <h1>ForgeTomorrow</h1>
-      <p>Jobs. Not noise.</p>
-    </div>
+    <h1>ForgeTomorrow</h1>
+    <p>Jobs. Not noise.</p>
   </header>
 
   <section>
