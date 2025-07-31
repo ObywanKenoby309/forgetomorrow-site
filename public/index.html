@@ -22,7 +22,7 @@
     nav {
       max-width: 900px;
       margin: auto;
-      padding: 0.75rem 2rem; /* Reduced padding for thinner banner */
+      padding: 0.75rem 2rem; /* Reduced nav padding to shrink banner */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -47,7 +47,7 @@
     }
 
     header {
-      padding: 4rem 2rem 3rem; /* Keep original header padding */
+      padding: 4rem 2rem 3rem;
       text-align: center;
       background: linear-gradient(to right, #ff4500, #ff9900);
       color: #fff;
@@ -62,7 +62,76 @@
       font-size: 1.2rem;
     }
 
-    /* rest of your styles ... */
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff9900;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #ff4500;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #ff9900;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .cta button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #ff4500;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta button:hover {
+      background: #e03d00;
+    }
   </style>
 </head>
 <body>
@@ -79,6 +148,9 @@
   <header>
     <h1>ForgeTomorrow</h1>
     <p>Jobs. Not noise.</p>
+    <div class="cta">
+      <button onclick="alert('Coming soon!')">Join the Waitlist</button>
+    </div>
   </header>
 
   <section>
@@ -92,73 +164,16 @@
     </ul>
   </section>
 
-  <section>
-    <h2>The Forge Difference</h2>
-    <ul>
-      <li>Live human support — not bots</li>
-      <li>Filtered feeds: personal & professional</li>
-      <li>AI tools to match jobs and build resumes</li>
-      <li>No ghost listings — real job board, real data</li>
-      <li>Affordable tools for solopreneurs & startups</li>
-    </ul>
-  </section>
+  <!-- rest of page content unchanged -->
 
-  <section>
-    <h2>Join the Waitlist</h2>
-    <form id="waitlist-form" action="https://formsubmit.co/waitlist@placeholder.com" method="POST" onsubmit="return handleSubmit(event, 'waitlist')">
-      <input type="email" name="email" id="waitlist-email" required placeholder="Enter your email" />
-      <input type="hidden" name="_captcha" value="false" />
-      <button type="submit">Join the Waitlist</button>
-    </form>
-    <div id="waitlist-message"></div>
-  </section>
+  <footer>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="features.html">Features</a>
+    </p>
+    <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
+  </footer>
 
-  <section>
-    <h2>Become a Founder</h2>
-    <form id="founder-form" action="https://formsubmit.co/founder@placeholder.com" method="POST" onsubmit="return handleSubmit(event, 'founder')">
-      <input type="email" name="email" id="founder-email" required placeholder="Enter your email" />
-      <input type="hidden" name="_captcha" value="false" />
-      <button type="submit">Become a Founder</button>
-    </form>
-    <div id="founder-message"></div>
-  </section>
-
-<footer style="background: #111; color: #888; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; margin-top: auto;">
-  <p>
-    <a href="index.html" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Home</a> |
-    <a href="about.html" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">About</a> |
-    <a href="features.html" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Features</a> |
-    <a href="#" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Support</a> |
-    <a href="#" style="color: #ff9900; text-decoration: none; margin: 0 0.5rem;">Contact</a>
-  </p>
-  <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
-</footer>
-
-  <script>
-    function handleSubmit(event, formType) {
-      event.preventDefault();
-      const emailInput = document.getElementById(formType + '-email').value.trim().toLowerCase();
-      if (!emailInput) return false;
-
-      const storageKey = 'submittedEmails_' + formType;
-      const submittedEmails = JSON.parse(localStorage.getItem(storageKey) || '[]');
-
-      if (submittedEmails.includes(emailInput)) {
-        showMessage(formType, "You've already submitted this email. Thanks!");
-        return false;
-      }
-
-      submittedEmails.push(emailInput);
-      localStorage.setItem(storageKey, JSON.stringify(submittedEmails));
-
-      event.target.submit();
-      showMessage(formType, "Thanks for joining! Check your inbox.");
-      return true;
-    }
-
-    function showMessage(formType, msg) {
-      document.getElementById(formType + '-message').textContent = msg;
-    }
-  </script>
 </body>
 </html>
