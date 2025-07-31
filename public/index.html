@@ -1,14 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ForgeTomorrow</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #1a1a1a, #000);
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(to right, #ff4500, #ff9900);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .cta button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #ff4500;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta button:hover {
+      background: #e03d00;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff9900;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    ul li::before {
+      content: "\2022";
+      color: #ff4500;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ff9900;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to ForgeTomorrow</h1>
-  <p>Jobs. Not noise.</p>
+  <header>
+    <h1>ForgeTomorrow</h1>
+    <p>Jobs. Not noise.</p>
+    <div class="cta">
+      <button onclick="alert('Coming soon!')">Join the Waitlist</button>
+    </div>
+  </header>
+
+  <section>
+    <h2>We built this for the forgotten.</h2>
+    <ul>
+      <li>Job seekers drowned out by algorithms</li>
+      <li>Freelancers stuck between gigs</li>
+      <li>Employers tired of ghost listings and bots</li>
+      <li>Mentors and coaches seeking reach</li>
+      <li>Anyone tired of gatekeeping and noise</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The Forge Difference</h2>
+    <ul>
+      <li>Live human support — not bots</li>
+      <li>Filtered feeds: personal & professional</li>
+      <li>AI tools to match jobs and build resumes</li>
+      <li>No ghost listings — real job board, real data</li>
+      <li>Affordable tools for solopreneurs & startups</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Become a Founding Member</h2>
+    <p style="margin-bottom: 1rem;">
+      We're launching soon on Kickstarter. Sign up early to help shape the future of professional networking.
+    </p>
+    <div class="cta">
+      <button onclick="alert('Kickstarter sign-up coming soon!')">Be a Founder</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      <a href="#">About</a> |
+      <a href="#">Support</a> |
+      <a href="#">Contact</a>
+    </p>
+    <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
+  </footer>
 </body>
 </html>
