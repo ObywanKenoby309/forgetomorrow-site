@@ -3,60 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — ForgeTomorrow</title>
+  <title>ForgeTomorrow - About</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom, #1a1a1a, #000);
       color: #f5f5f5;
-      margin: 0; padding: 2rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
     }
     h1, h2 {
       color: #ff9900;
-      text-align: center;
       margin-bottom: 1rem;
-    }
-    h1 {
-      margin-top: 1rem;
+      text-align: center;
     }
     p {
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style-type: square;
-      color: #ff4500;
-      margin-left: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-    a.button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #ff4500;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin-top: 1rem;
-      text-align: center;
-    }
-    a.button:hover {
-      background: #e03d00;
+      max-width: 700px;
+      margin: 0 auto 1.5rem auto;
+      line-height: 1.5;
+      font-size: 1.1rem;
     }
     footer {
       background: #111;
       color: #888;
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
+      padding: 2rem;
       font-size: 0.9rem;
+      margin-top: 3rem;
     }
     footer a {
       color: #ff9900;
@@ -66,71 +50,36 @@
     footer a:hover {
       text-decoration: underline;
     }
-    section {
-      margin-bottom: 3rem;
-    }
   </style>
 </head>
 <body>
 
-  <h1>About ForgeTomorrow</h1>
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
 
   <section>
-    <h2>Our Mission</h2>
-    <p>We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.</p>
-    <p>Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and transparency they need to succeed in today’s fast-changing job market.</p>
-    <p><strong>No gatekeeping. No noise.</strong> Just support that shows up, AI with integrity, and a network where people come before algorithms.</p>
-  </section>
-
-  <section>
-    <h2>Our Story</h2>
+    <h1>About ForgeTomorrow</h1>
     <p>ForgeTomorrow started because we were tired of the gatekeeping and poor support from other famous sites. We listened closely to the struggles faced by professionals at every level — from those just starting their job search and struggling to afford networking tools, to senior C-suite executives wanting to stay connected and informed in the fast-evolving professional landscape.</p>
     <p>Just because you can’t pay for top-tier services doesn’t mean you shouldn’t receive assistance. We’ve seen too many talented people lost to the struggle — I personally read about a user who committed suicide because he simply gave up. Others wander without help or direction. That shouldn’t be how it is.</p>
-    <p>As people and professionals across IT, HR, employers, coaches, and beyond, we can do better to support job seekers. Everyone has a role to play — and we believe this is that opportunity to build something truly meaningful.</p>
+    <p>As people and professionals in the market, everyone from IT, HR, employers, and coaches can do better to help the seeker — and we should. This is that opportunity.</p>
     <p>Many current platforms have fallen short of meeting the needs of individuals seeking meaningful support and connection, focusing too much on popularity and paid access rather than real help.</p>
     <p>ForgeTomorrow is built to fill that gap — to be a place where everyone can find real tools, real help, and real connection, no matter their budget or status.</p>
   </section>
 
-  <section>
-    <h2>Our Core Values</h2>
-    <ul>
-      <li><strong>Human-Centered</strong><br>We prioritize real people over algorithms. Every feature and decision is designed to support meaningful human connection and empower users at every stage of their journey.</li>
-      <li><strong>Transparency & Integrity</strong><br>We believe in openness and honesty. Users deserve clear, trustworthy tools and communications without hidden agendas or gatekeeping.</li>
-      <li><strong>Ethical Hiring & Opportunity</strong><br>We commit to fostering fair, bias-free hiring processes and creating opportunities for all, regardless of background or resources.</li>
-      <li><strong>AI with Purpose</strong><br>Our AI tools serve to assist, not replace, human judgment—providing actionable insights while respecting privacy and individual dignity.</li>
-      <li><strong>Community Empowerment</strong><br>ForgeTomorrow is a platform built by and for its users. We encourage mentorship, collaboration, and shared success across all professional levels.</li>
-      <li><strong>Accessibility & Affordability</strong><br>Everyone deserves access to professional growth tools. We strive to keep our platform affordable and inclusive to support the widest possible audience.</li>
-    </ul>
-  </section>
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
 
-  <section>
-    <h2>The Team</h2>
-    <p>Right now, it’s just me and my AI partner, Sora — a collaboration between human vision and AI precision, forging the future of professional networking together. As the project grows, we’ll bring in more talented collaborators passionate about changing the game.</p>
-  </section>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading header:', err));
 
-  <section>
-    <h2>Milestones & Vision</h2>
-    <p>Planning and development officially kicked off on July 31, 2025. We’re building ForgeTomorrow from the ground up with a focus on real needs and real people. Our vision is to create a thriving, human-centered network that evolves with the market and never loses sight of its mission.</p>
-  </section>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 
-  <section>
-    <h2>How We Work</h2>
-    <p>We take the customer experience seriously. With a strong background in Customer Support, we strive to lead by identifying and solving the real challenges our community faces. Feedback isn’t just welcome — it’s essential. We truly appreciate when members share suggestions, helping us shape ForgeTomorrow into a platform that serves everyone better.</p>
-  </section>
-
-  <section>
-    <h2>Contact & Feedback</h2>
-    <p>Have questions, ideas, or want to get involved? Reach out anytime at <a href="mailto:forgetomorrowteam@gmail.com" style="color:#ff9900;">forgetomorrowteam@gmail.com</a>. We’d love to hear from you.</p>
-  </section>
-
-  <footer>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="#">Support</a> |
-      <a href="#">Contact</a>
-    </p>
-    <p>Built by people who’ve been there. &copy; ForgeTomorrow 2025</p>
-  </footer>
 </body>
 </html>
