@@ -17,139 +17,68 @@
       background: linear-gradient(to bottom, #1a1a1a, #000);
       color: #f5f5f5;
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    header {
-  padding: 2rem 2rem 1.5rem; /* Reduced top/bottom padding */
-  text-align: center;
-  background: linear-gradient(to right, #ff4500, #ff9900);
-  color: #fff;
-}
+    nav {
+      max-width: 900px;
+      margin: auto;
+      padding: 0.5rem 2rem; /* Reduced padding */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #ff4500, #ff9900);
+      color: white;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
+    nav div:first-child {
+      font-size: 1.5rem;
+    }
 
-    header h1 {
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header > div {
+      padding: 1.5rem 2rem 1rem; /* Reduced padding for banner */
+      text-align: center;
+      color: white;
+    }
+
+    header > div h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
 
-    header p {
+    header > div p {
       font-size: 1.2rem;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 600px;
-      margin: 1rem auto;
-      background: #222;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ff4500aa;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ff9900;
-      text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    ul li::before {
-      content: "•";
-      color: #ff4500;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input[type="email"] {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      outline: none;
-    }
-
-    button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      background: #ff4500;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #e03d00;
-    }
-
-    #waitlist-message, #founder-message {
-      margin-top: 0.5rem;
-      color: #aaffaa;
-      font-weight: 600;
-      min-height: 1.2em;
-      text-align: center;
-    }
-
-    footer {
-      background: #111;
-      color: #888;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: auto;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #ff9900;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 480px) {
-      section {
-        margin: 1rem;
-        padding: 2rem 1rem;
-      }
     }
   </style>
 </head>
 <body>
-<header>
-<nav style="max-width: 900px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to right, #ff4500, #ff9900); color: white; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <div style="font-size: 1.5rem;">ForgeTomorrow</div>
-  <div>
-    <a href="index.html" style="color: white; text-decoration: none; margin-right: 1.5rem;">Home</a>
-    <a href="about.html" style="color: white; text-decoration: none; margin-right: 1.5rem;">About</a>
-    <a href="features.html" style="color: white; text-decoration: none;">Features</a>
-  </div>
-</nav>
-  <div style="text-align: center; padding: 3rem 2rem; color: white;">
-    <h1>ForgeTomorrow</h1>
-    <p>Jobs. Not noise.</p>
-  </div>
-</header>
 
+  <nav>
+    <div>ForgeTomorrow</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+    </div>
+  </nav>
+
+  <header>
+    <div>
+      <h1>ForgeTomorrow</h1>
+      <p>Jobs. Not noise.</p>
+    </div>
+  </header>
 
   <section>
     <h2>We built this for the forgotten.</h2>
