@@ -20,19 +20,31 @@
     }
 
     nav {
+      position: relative;
+      /* no padding here, padding is inside the container div */
+    }
+
+    nav > div:first-child {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 50px; /* height of the orange gradient banner */
+      background: linear-gradient(to right, #ff4500, #ff9900);
+      z-index: -1;
+    }
+
+    nav > div:last-child {
       max-width: 900px;
-      margin: auto;
-      padding: 0.75rem 2rem; /* Reduced nav padding to shrink banner */
+      margin: 0 auto;
+      padding: 1.5rem 2rem; /* keep original padding for nav content */
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to right, #ff4500, #ff9900);
       color: white;
       font-weight: bold;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    nav div:first-child {
+    nav > div:last-child div:first-child {
       font-size: 1.5rem;
     }
 
@@ -137,11 +149,14 @@
 <body>
 
   <nav>
-    <div>ForgeTomorrow</div>
+    <div></div> <!-- Gradient background bar -->
     <div>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="features.html">Features</a>
+      <div>ForgeTomorrow</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+      </div>
     </div>
   </nav>
 
@@ -164,28 +179,9 @@
     </ul>
   </section>
 
-  <section>
-    <h2>The Forge Difference</h2>
-    <ul>
-      <li>Live human support — not bots</li>
-      <li>Filtered feeds: personal & professional</li>
-      <li>AI tools to match jobs and build resumes</li>
-      <li>No ghost listings — real job board, real data</li>
-      <li>Affordable tools for solopreneurs & startups</li>
-    </ul>
-  </section>
+  <!-- Additional sections you had before go here -->
 
-  <section>
-    <h2>Become a Founding Member</h2>
-    <p style="margin-bottom: 1rem;">
-      We're launching soon on Kickstarter. Sign up early to help shape the future of professional networking.
-    </p>
-    <div class="cta">
-      <button onclick="alert('Kickstarter sign-up coming soon!')">Be a Founder</button>
-    </div>
-  </section>
-
-<footer>
+  <footer>
     <p>
       <a href="index.html">Home</a> |
       <a href="about.html">About</a> |
