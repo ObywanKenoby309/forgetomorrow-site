@@ -6,6 +6,7 @@
   <title>ForgeTomorrow - User Profile</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <style>
+    /* Your CSS styles here */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -268,8 +269,7 @@
   <div id="footer-placeholder"></div>
 
   <script>
-    
-   fetch('header.html')
+    fetch('header.html')
       .then(res => res.text())
       .then(html => document.getElementById('header-placeholder').innerHTML = html)
       .catch(err => console.error('Error loading header:', err));
