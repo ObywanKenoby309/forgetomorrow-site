@@ -7,44 +7,47 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body, html {
+    html, body {
       height: 100%;
       margin: 0;
       font-family: 'Inter', sans-serif;
-      color: #eee;
       background: url('/images/forge-bg-bw.png') no-repeat center center fixed;
       background-size: cover;
+      color: #eee;
       position: relative;
     }
-    /* Dark overlay for readability */
+    /* Dark overlay */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0,0,0,0.65);
       z-index: 0;
     }
-    /* Container on top of overlay */
+    /* Container above overlay */
     .content-container {
       position: relative;
       z-index: 10;
       max-width: 700px;
       margin: 5rem auto 3rem;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0,0,0,0.55);
       padding: 2.5rem 2rem;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
     }
+    /* Strong headline with inline styles for guaranteed size */
     h1 {
-      color: #FF7043;
-      font-weight: 700;
-      font-size: 4.5rem; /* increased size for impact */
-      margin-bottom: 1rem;
+      font-size: 5rem !important; /* absolutely large */
+      color: #FF7043 !important;
+      font-weight: 800 !important;
+      margin-bottom: 1rem !important;
+      letter-spacing: 0.06em !important;
+      text-shadow: 0 0 10px rgba(255, 112, 67, 0.8);
     }
     p {
       font-weight: 400;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #ddd;
       line-height: 1.6;
       margin-bottom: 1.5rem;
@@ -52,22 +55,24 @@
     .btn-primary {
       background-color: #FF7043;
       color: #fff;
-      font-weight: 600;
-      padding: 0.9rem 2.5rem;
+      font-weight: 700;
+      padding: 1rem 3rem;
       border-radius: 8px;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
       text-decoration: none;
       display: inline-block;
+      box-shadow: 0 4px 10px rgba(255, 112, 67, 0.5);
     }
     .btn-primary:hover {
       background-color: #F4511E;
+      box-shadow: 0 6px 15px rgba(244, 81, 30, 0.7);
     }
     @media (max-width: 640px) {
       h1 {
-        font-size: 3rem;
+        font-size: 3.5rem !important;
       }
       p {
         font-size: 1rem;
@@ -77,8 +82,8 @@
         padding: 2rem 1.5rem;
       }
       .btn-primary {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+        padding: 0.9rem 2.5rem;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -89,7 +94,9 @@
   <div id="header-placeholder"></div>
 
   <main class="content-container" role="main" aria-label="About ForgeTomorrow">
-    <h1 class="text-[#FF7043] font-bold text-7z1 mb-6 text-center">ForgeTomorrow</h1>
+    <h1 style="font-size:5rem; color:#FF7043; font-weight:800; letter-spacing:0.06em; text-shadow: 0 0 10px rgba(255,112,67,0.8); margin-bottom:1rem;">
+      ForgeTomorrow
+    </h1>
     <p>
       We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.
     </p>
