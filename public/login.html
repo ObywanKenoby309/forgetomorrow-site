@@ -10,12 +10,16 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #ECEFF1;
+      color: #212121;
     }
   </style>
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
-  <main class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+  <!-- Header placeholder -->
+  <div id="header-placeholder" class="fixed top-0 left-0 right-0 z-10"></div>
+
+  <main class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mt-20">
     <h1 class="text-3xl font-bold text-[#FF7043] mb-6 text-center">Login to ForgeTomorrow</h1>
 
     <form id="loginForm" class="space-y-6">
@@ -54,6 +58,21 @@
       Don't have an account? <a href="signup.html" class="text-[#FF7043] font-semibold hover:underline">Sign Up</a>
     </p>
   </main>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder" class="mt-12"></div>
+
+  <script>
+    fetch('header-landing.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading header:', err));
+
+    fetch('footer-public.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 
 </body>
 </html>
