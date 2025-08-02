@@ -33,6 +33,12 @@
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+      overflow-wrap: break-word;
+      word-break: break-word;
+      word-wrap: break-word;
+      max-width: 90vw;
+      margin-left: auto;
+      margin-right: auto;
     }
     h1 {
       font-size: 5rem !important;
@@ -41,6 +47,9 @@
       margin-bottom: 1rem !important;
       letter-spacing: 0.06em !important;
       text-shadow: 0 0 10px rgba(255,112,67,0.8);
+      white-space: normal;
+      max-width: 100%;
+      word-wrap: break-word;
     }
     p {
       font-weight: 400;
@@ -50,14 +59,20 @@
       margin-bottom: 1.5rem;
     }
     input[type="email"] {
+      background-color: #fff !important;
+      color: #222 !important;
+      border: 1px solid #ccc !important;
       padding: 0.75rem 1rem;
       border-radius: 8px;
-      border: 1px solid #ccc;
       width: 100%;
       max-width: 400px;
       font-size: 1.1rem;
       margin: 0 auto 1rem auto;
       display: block;
+      box-shadow: none;
+    }
+    input[type="email"]::placeholder {
+      color: #555;
     }
     .btn-primary {
       background-color: #FF7043;
@@ -87,6 +102,7 @@
       .content-container {
         margin: 3rem 1rem 2rem;
         padding: 2rem 1.5rem;
+        max-width: 95vw;
       }
       input[type="email"] {
         max-width: 100%;
@@ -146,7 +162,7 @@
         user_email: emailInput.value
       })
       .then(() => {
-        alert("Success! You're added. (We don't like ghosts. With us, you'll receive responses and transparency.)");
+        alert("Success! You're added.\n\"We don't like ghosts. We will always respond and provide transparency.\"");
         emailInput.value = '';
       }, (error) => {
         alert('Oops! Something went wrong. Please try again later.');
