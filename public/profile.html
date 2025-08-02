@@ -10,6 +10,15 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    /* Circular profile image with accent border */
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #FF7043;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255,112,67,0.5);
+    }
   </style>
 </head>
 <body class="bg-[#ECEFF1] text-[#212121]">
@@ -17,9 +26,43 @@
   <!-- Header placeholder -->
   <div id="header-placeholder"></div>
 
-  <main class="max-w-7xl mx-auto p-6 space-y-8 min-h-[80vh]">
+  <main class="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh]">
 
-    <h1 class="text-4xl font-bold text-[#FF7043] mb-8 text-center">Your Profile</h1>
+    <!-- Top Section: Image and Basic Info -->
+    <section class="bg-white rounded-lg shadow p-8 flex flex-col items-center sm:flex-row sm:items-center sm:space-x-8 relative">
+      
+      <!-- Profile Picture -->
+      <div>
+        <img
+          src="https://via.placeholder.com/140"
+          alt="Profile picture"
+          class="profile-pic mb-6 sm:mb-0"
+          aria-label="User profile picture"
+        />
+        <button
+          class="mt-3 w-full sm:w-auto bg-[#FF7043] hover:bg-[#F4511E] text-white px-4 py-2 rounded font-semibold transition-colors"
+          aria-label="Update profile picture"
+          onclick="alert('Profile picture update feature coming soon!')"
+        >
+          Update Picture
+        </button>
+      </div>
+
+      <!-- Basic Info -->
+      <div class="flex-1 space-y-4">
+        <div>
+          <h1 class="text-4xl font-bold text-[#FF7043]">Eric James</h1>
+          <p class="text-gray-700 text-lg">He/Him</p>
+        </div>
+        <div>
+          <p class="text-gray-600 italic max-w-lg">Customer Success Leader & AI Advocate</p>
+        </div>
+        <div class="flex flex-wrap gap-4 text-gray-600">
+          <span>Location: Nashville, TN</span>
+          <span>Status: Open to Opportunities</span>
+        </div>
+      </div>
+    </section>
 
     <!-- About Me Section -->
     <section class="bg-white rounded-lg shadow p-6 relative">
@@ -36,61 +79,20 @@
       </p>
     </section>
 
-    <!-- Experience Section -->
-    <section class="bg-white rounded-lg shadow p-6 relative">
-      <button
-        class="absolute top-4 right-4 bg-[#FF7043] hover:bg-[#F4511E] text-white px-3 py-1 rounded text-sm font-semibold"
-        aria-label="Edit Experience"
-        onclick="alert('Edit Experience feature coming soon!')"
-      >
-        Edit
-      </button>
-      <h2 class="text-2xl font-semibold text-[#FF7043] mb-4">Experience</h2>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li><strong>Customer Success Director</strong> — ForgeTomorrow Inc. (2023–Present)</li>
-        <li><strong>Technical Support Lead</strong> — Tech Solutions Ltd. (2018–2023)</li>
-        <li><strong>IT Operations Manager</strong> — Enterprise Corp. (2012–2018)</li>
-      </ul>
+    <!-- Professional History Link -->
+    <section class="bg-white rounded-lg shadow p-6 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow"
+      onclick="alert('Professional History section coming soon!')"
+      tabindex="0" role="button" aria-label="Go to Professional History">
+      <h2 class="text-2xl font-semibold text-[#FF7043]">Professional History</h2>
+      <span class="text-[#FF7043] font-bold text-xl">→</span>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="bg-white rounded-lg shadow p-6 relative">
-      <button
-        class="absolute top-4 right-4 bg-[#FF7043] hover:bg-[#F4511E] text-white px-3 py-1 rounded text-sm font-semibold"
-        aria-label="Edit Portfolio"
-        onclick="alert('Edit Portfolio feature coming soon!')"
-      >
-        Edit
-      </button>
-      <h2 class="text-2xl font-semibold text-[#FF7043] mb-4">Portfolio</h2>
-      <div class="space-y-4">
-        <div class="bg-gray-100 rounded-lg p-4 shadow-sm">
-          <h3 class="font-semibold text-[#FF7043] mb-1">AI-Powered Job Matching Platform</h3>
-          <p>Designed and led the development of a job matching AI system that increased successful job placements by 30% within the first year.</p>
-        </div>
-        <div class="bg-gray-100 rounded-lg p-4 shadow-sm">
-          <h3 class="font-semibold text-[#FF7043] mb-1">Customer Support Team Revamp</h3>
-          <p>Implemented new training and tools that improved customer satisfaction scores by 25%.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="bg-white rounded-lg shadow p-6 relative">
-      <button
-        class="absolute top-4 right-4 bg-[#FF7043] hover:bg-[#F4511E] text-white px-3 py-1 rounded text-sm font-semibold"
-        aria-label="Edit Skills"
-        onclick="alert('Edit Skills feature coming soon!')"
-      >
-        Edit
-      </button>
-      <h2 class="text-2xl font-semibold text-[#FF7043] mb-4">Skills & Endorsements</h2>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Leadership & Team Management</li>
-        <li>Customer Success Strategy</li>
-        <li>AI & Data-Driven Decision Making</li>
-        <li>Technical Support & Operations</li>
-      </ul>
+    <!-- Analytics Link -->
+    <section class="bg-white rounded-lg shadow p-6 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow"
+      onclick="alert('Analytics dashboard coming soon!')"
+      tabindex="0" role="button" aria-label="Go to Analytics Dashboard">
+      <h2 class="text-2xl font-semibold text-[#FF7043]">Analytics</h2>
+      <span class="text-[#FF7043] font-bold text-xl">→</span>
     </section>
 
   </main>
@@ -109,5 +111,6 @@
       .then(html => document.getElementById('footer-placeholder').innerHTML = html)
       .catch(err => console.error('Error loading footer:', err));
   </script>
+
 </body>
 </html>
