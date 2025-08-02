@@ -3,48 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ForgeTomorrow - Home</title>
+  <title>ForgeTomorrow - About</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      background-color: #ECEFF1;
+      color: #212121;
     }
   </style>
 </head>
-<body class="bg-[#ECEFF1] text-[#212121]">
+<body>
 
   <!-- Header placeholder -->
   <div id="header-placeholder"></div>
 
-  <main class="max-w-7xl mx-auto p-6 space-y-8 min-h-[80vh]">
-    <section class="bg-white rounded-lg shadow p-8 text-center">
-      <h1 class="text-4xl font-bold text-[#FF7043] mb-4">Welcome to ForgeTomorrow</h1>
-      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-        We’re building the next evolution in professional networking — human-centered, AI-empowered, and built for the real world.
+  <main class="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh]">
+
+    <h1 class="text-5xl font-bold text-[#FF7043] mb-6 text-center">ForgeTomorrow</h1>
+
+    <section class="bg-white rounded-lg shadow p-8 space-y-6">
+      <p class="text-gray-700 text-center text-lg leading-relaxed max-w-xl mx-auto">
+        We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.
+        Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and transparency they need to succeed in today’s fast-changing job market.
+        No gatekeeping. No noise. Just support that shows up, AI with integrity, and a network where people come before algorithms.
       </p>
-      <p class="text-gray-600 max-w-3xl mx-auto mb-8">
-        Whether you're job seeking, freelancing, recruiting, mentoring, or an ethical employer, ForgeTomorrow equips you with tools and transparency to succeed in today’s fast-changing job market.
+      <p class="text-gray-700 text-center text-lg leading-relaxed max-w-xl mx-auto">
+        Join us as we shake up the industry and create opportunities for everyone—whether you’re just starting out or leading a team.
       </p>
-      <button
-        class="bg-[#FF7043] hover:bg-[#F4511E] text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-        aria-label="Join the waitlist"
-        onclick="alert('Waitlist coming soon!')"
-      >
-        Join the Waitlist
-      </button>
     </section>
 
-    <section class="bg-white rounded-lg shadow p-8">
-      <h2 class="text-2xl font-semibold text-[#FF7043] mb-4 text-center">We built this for the forgotten.</h2>
-      <ul class="list-disc list-inside text-gray-700 max-w-xl mx-auto space-y-2 text-left">
-        <li>Job seekers drowned out by algorithms</li>
-        <li>Freelancers stuck between gigs</li>
-        <li>Employers tired of ghost listings and bots</li>
-        <li>Mentors and coaches seeking reach</li>
-        <li>Anyone tired of gatekeeping and noise</li>
-      </ul>
-    </section>
   </main>
 
   <!-- Footer placeholder -->
@@ -56,12 +45,11 @@
       .then(html => document.getElementById('header-placeholder').innerHTML = html)
       .catch(err => console.error('Error loading header:', err));
 
-
     fetch('footer-public.html')
       .then(res => res.text())
       .then(html => document.getElementById('footer-placeholder').innerHTML = html)
       .catch(err => console.error('Error loading footer:', err));
-
   </script>
+
 </body>
 </html>
