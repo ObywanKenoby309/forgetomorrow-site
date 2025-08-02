@@ -1,112 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ForgeTomorrow - Pricing Plans</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <title>ForgeTomorrow - Pricing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* (Include all your existing styles here - omitted for brevity) */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
   </style>
 </head>
-<body>
-
-  <script>
-    (function() {
-      const password = "4ge$3cur31904*"; // Set your password here
-      let attempts = 3;
-      while(attempts > 0) {
-        let userPass = prompt("Enter the password to view this page:");
-        if(userPass === null) {
-          alert("Access cancelled.");
-          window.location.href = "index.html"; // Redirect away if cancelled
-          return;
-        }
-        if(userPass === password) {
-          break; // Access granted
-        } else {
-          attempts--;
-          alert(`Incorrect password. ${attempts} attempt(s) remaining.`);
-        }
-      }
-      if(attempts === 0) {
-        alert("Access denied.");
-        window.location.href = "index.html"; // Redirect after 3 failed attempts
-      }
-    })();
-  </script>
+<body class="bg-[#ECEFF1] text-[#212121]">
 
   <!-- Header placeholder -->
   <div id="header-placeholder"></div>
 
-  <section>
-    <h1>Pricing Plans</h1>
-    <p class="intro">
-      All accounts start free with core features. Upgrade anytime to unlock advanced tools tailored to your needs.
-    </p>
+  <main class="max-w-7xl mx-auto p-6 space-y-12 min-h-[80vh]">
 
-    <div class="free-note">
-      <strong>Free Plan:</strong> Access trusted job boards, smart filters, private notes, custom themes, and ethical data use at no cost.
-    </div>
+    <section class="text-center">
+      <h1 class="text-4xl font-bold text-[#FF7043] mb-4">Choose Your Plan</h1>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Flexible pricing designed to fit your needs — whether you're just starting out or scaling your hiring.
+      </p>
+    </section>
 
-    <div class="plans-container" role="list" aria-label="Pricing plans">
+    <section class="grid gap-8 md:grid-cols-3">
 
-      <!-- Job Seeker Plan -->
-      <article class="plan-card" role="listitem" tabindex="0" aria-selected="false" aria-label="Job Seeker Pro plan for $29.99 per month">
-        <h3>Job Seeker Pro</h3>
-        <div class="price">
-          $29.99 <small>/ month</small><br />
-          $239.88 <small>/ year (save 33%)</small>
-        </div>
-        <ul class="features">
+      <!-- Free Plan -->
+      <div class="bg-white rounded-lg shadow p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold text-[#FF7043] mb-4">Free</h2>
+        <p class="text-4xl font-bold mb-6"> $0 <span class="text-base font-normal">/ month</span> </p>
+        <ul class="flex-1 mb-6 space-y-3 text-gray-700 list-disc list-inside">
+          <li>Smart Job Board access</li>
+          <li>Smart Feed Filters</li>
+          <li>Private Profile Notes</li>
+          <li>Custom Profile Themes</li>
+          <li>Ethical Data Use</li>
+          <li>TrueEndorse Endorsements</li>
+        </ul>
+        <button class="mt-auto bg-[#FF7043] hover:bg-[#F4511E] text-white py-3 rounded-lg font-semibold transition-colors">
+          Get Started
+        </button>
+      </div>
+
+      <!-- Paid Job Seeker Plan -->
+      <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col border-4 border-[#FF7043]">
+        <h2 class="text-2xl font-semibold text-[#FF7043] mb-4">Job Seeker</h2>
+        <p class="text-4xl font-bold mb-6">$29.99 <span class="text-base font-normal">/ month</span></p>
+        <ul class="flex-1 mb-6 space-y-3 text-gray-700 list-disc list-inside">
           <li>5 InMail credits per month</li>
-          <li>Limited profile browsing</li>
           <li>See who viewed your profile (last year)</li>
-          <li>Open profiles</li>
-          <li>Top applicant job recommendations</li>
-          <li>Company insights</li>
-          <li>Resume insights</li>
-          <li>Access to 22,000+ learning courses</li>
-          <li>Full access to interview prep tools</li>
+          <li>Open Profiles</li>
+          <li>Top Applicant Job Recommendations</li>
+          <li>Company Insights</li>
+          <li>Resume Insights</li>
+          <li>Access to 22,000+ Learning Courses</li>
+          <li>Full Interview Prep Tools</li>
         </ul>
-        <button class="select-button" aria-label="Select Job Seeker Pro plan">Select Plan</button>
-      </article>
+        <button class="mt-auto bg-[#FF7043] hover:bg-[#F4511E] text-white py-3 rounded-lg font-semibold transition-colors">
+          Upgrade Now
+        </button>
+      </div>
 
-      <!-- Coach/Mentor Plan -->
-      <article class="plan-card" role="listitem" tabindex="0" aria-selected="false" aria-label="Coach and Mentor plan, pricing varies per event">
-        <h3>Coach & Mentor</h3>
-        <div class="price">
-          $5–50 <small>per event</small>
-        </div>
-        <ul class="features">
-          <li>Access to coaching marketplace</li>
-          <li>Tools to grow your audience</li>
-          <li>Vetted and trusted network</li>
-          <li>Event access for growth & visibility</li>
-          <li>Referral tracking</li>
-          <li>Connection customizer with video/voice intros</li>
+      <!-- Paid Business Plan -->
+      <div class="bg-white rounded-lg shadow p-6 flex flex-col">
+        <h2 class="text-2xl font-semibold text-[#FF7043] mb-4">Business</h2>
+        <p class="text-4xl font-bold mb-6">$34.99 <span class="text-base font-normal">/ month</span></p>
+        <ul class="flex-1 mb-6 space-y-3 text-gray-700 list-disc list-inside">
+          <li>15 InMail credits per month</li>
+          <li>Unlimited people browsing</li>
+          <li>See who viewed your profile (last year)</li>
+          <li>Open Profiles</li>
+          <li>Top Applicant Job Recommendations</li>
+          <li>Company Insights</li>
+          <li>Resume Insights</li>
+          <li>Access to 22,000+ Learning Courses</li>
+          <li>Full Interview Prep Tools</li>
         </ul>
-        <button class="select-button" aria-label="Select Coach and Mentor plan">Select Plan</button>
-      </article>
+        <button class="mt-auto bg-[#FF7043] hover:bg-[#F4511E] text-white py-3 rounded-lg font-semibold transition-colors">
+          Upgrade Now
+        </button>
+      </div>
 
-      <!-- Small Business Plan -->
-      <article class="plan-card" role="listitem" tabindex="0" aria-selected="false" aria-label="Small Business plan with pay-per-post options">
-        <h3>Small Business</h3>
-        <div class="price">
-          Starting at $9.99 <small>per post</small>
-        </div>
-        <ul class="features">
-          <li>Pay-per-post job listings</li>
-          <li>Limited recruiter tools</li>
-          <li>Access to referral tracker</li>
-          <li>Company insights</li>
-          <li>Unlimited profile browsing</li>
-        </ul>
-        <button class="select-button" aria-label="Select Small Business plan">Select Plan</button>
-      </article>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
@@ -121,15 +100,6 @@
       .then(res => res.text())
       .then(html => document.getElementById('footer-placeholder').innerHTML = html)
       .catch(err => console.error('Error loading footer:', err));
-
-    // Optional: Add select plan button interaction
-    const buttons = document.querySelectorAll('.select-button');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        alert(`You selected the ${button.previousElementSibling.previousElementSibling.textContent.trim()} plan!`);
-      });
-    });
   </script>
-
 </body>
 </html>
