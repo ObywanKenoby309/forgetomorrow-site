@@ -16,7 +16,6 @@
       color: #eee;
       position: relative;
     }
-    /* Dark overlay */
     body::before {
       content: "";
       position: fixed;
@@ -24,7 +23,6 @@
       background-color: rgba(0,0,0,0.65);
       z-index: 0;
     }
-    /* Container above overlay */
     .content-container {
       position: relative;
       z-index: 10;
@@ -36,14 +34,13 @@
       text-align: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.7);
     }
-    /* Strong headline with inline styles for guaranteed size */
     h1 {
-      font-size: 5rem !important; /* absolutely large */
+      font-size: 5rem !important;
       color: #FF7043 !important;
       font-weight: 800 !important;
       margin-bottom: 1rem !important;
       letter-spacing: 0.06em !important;
-      text-shadow: 0 0 10px rgba(255, 112, 67, 0.8);
+      text-shadow: 0 0 10px rgba(255,112,67,0.8);
     }
     p {
       font-weight: 400;
@@ -51,6 +48,16 @@
       color: #ddd;
       line-height: 1.6;
       margin-bottom: 1.5rem;
+    }
+    input[type="email"] {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1.1rem;
+      margin: 0 auto 1rem auto;
+      display: block;
     }
     .btn-primary {
       background-color: #FF7043;
@@ -81,6 +88,9 @@
         margin: 3rem 1rem 2rem;
         padding: 2rem 1.5rem;
       }
+      input[type="email"] {
+        max-width: 100%;
+      }
       .btn-primary {
         padding: 0.9rem 2.5rem;
         font-size: 1.1rem;
@@ -94,9 +104,7 @@
   <div id="header-placeholder"></div>
 
   <main class="content-container" role="main" aria-label="About ForgeTomorrow">
-    <h1 style="font-size:5rem; color:#FF7043; font-weight:800; letter-spacing:0.06em; text-shadow: 0 0 10px rgba(255,112,67,0.8); margin-bottom:1rem;">
-      ForgeTomorrow
-    </h1>
+    <h1>ForgeTomorrow</h1>
     <p>
       We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.
     </p>
@@ -104,11 +112,48 @@
       Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and transparency they need to succeed in today’s fast-changing job market.
       No gatekeeping. No noise. Just support that shows up, AI with integrity, and a network where people come before algorithms.
     </p>
-    <a href="#" class="btn-primary" onclick="alert('Waitlist signup coming soon!')">Join the Waitlist</a>
+
+    <form id="waitlist-form" onsubmit="sendWaitlistEmail(event)">
+      <input
+        type="email"
+        name="user_email"
+        id="user_email"
+        placeholder="Enter your email"
+        required
+      />
+      <button type="submit" class="btn-primary">Join the Waitlist</button>
+    </form>
   </main>
 
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init('YyYidv88o9X7iKfYJ'); // Your public key (User ID)
+    })();
+
+    function sendWaitlistEmail(event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('user_email');
+      if (!emailInput.value) {
+        alert('Please enter a valid email.');
+        return;
+      }
+
+      emailjs.send('service_quxmizv', 'forgetomorrow', {
+        user_email: emailInput.value
+      })
+      .then(() => {
+        alert("Success! You're added. (We don't like ghosts. With us, you'll receive responses and transparency.)");
+        emailInput.value = '';
+      }, (error) => {
+        alert('Oops! Something went wrong. Please try again later.');
+        console.error('EmailJS error:', error);
+      });
+    }
+  </script>
 
   <script>
     fetch('header-landing.html')
