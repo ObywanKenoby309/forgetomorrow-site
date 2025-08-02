@@ -7,10 +7,79 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    body, html {
+      height: 100%;
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #ECEFF1;
-      color: #212121;
+      color: #eee;
+      background: url('/images/forge-bg-bw.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+    /* Container on top of overlay */
+    .content-container {
+      position: relative;
+      z-index: 10;
+      max-width: 700px;
+      margin: 5rem auto 3rem;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    }
+    h1 {
+      color: #FF7043;
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+      background-color: #FF7043;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.9rem 2.5rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #F4511E;
+    }
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .content-container {
+        margin: 3rem 1rem 2rem;
+        padding: 2rem 1.5rem;
+      }
+      .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -19,21 +88,16 @@
   <!-- Header placeholder -->
   <div id="header-placeholder"></div>
 
-  <main class="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh]">
-
-    <h1 class="text-5xl font-bold text-[#FF7043] mb-6 text-center">ForgeTomorrow</h1>
-
-    <section class="bg-white rounded-lg shadow p-8 space-y-6">
-      <p class="text-gray-700 text-center text-lg leading-relaxed max-w-xl mx-auto">
-        We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.
-        Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and transparency they need to succeed in today’s fast-changing job market.
-        No gatekeeping. No noise. Just support that shows up, AI with integrity, and a network where people come before algorithms.
-      </p>
-      <p class="text-gray-700 text-center text-lg leading-relaxed max-w-xl mx-auto">
-        Join us as we shake up the industry and create opportunities for everyone—whether you’re just starting out or leading a team.
-      </p>
-    </section>
-
+  <main class="content-container" role="main" aria-label="About ForgeTomorrow">
+    <h1>ForgeTomorrow</h1>
+    <p>
+      We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.
+    </p>
+    <p>
+      Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and transparency they need to succeed in today’s fast-changing job market.
+      No gatekeeping. No noise. Just support that shows up, AI with integrity, and a network where people come before algorithms.
+    </p>
+    <a href="#" class="btn-primary" onclick="alert('Waitlist signup coming soon!')">Join the Waitlist</a>
   </main>
 
   <!-- Footer placeholder -->
