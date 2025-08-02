@@ -1,0 +1,19 @@
+<header class="bg-[#37474F] text-white flex justify-between items-center px-6 py-4 shadow-md">
+  <div class="text-[#FF7043] font-bold text-xl tracking-wide cursor-pointer">
+    Forge Tomorrow
+  </div>
+  <nav class="space-x-4">
+    <button
+      class="bg-transparent border border-[#FF7043] text-[#FF7043] px-4 py-2 rounded-xl font-semibold hover:bg-[#FF7043] hover:text-white transition-colors"
+      onclick="alert('Login functionality coming soon!')"
+    >
+      Login
+    </button>
+    <button
+      class="bg-[#FF7043] px-4 py-2 rounded-xl font-semibold hover:bg-[#F4511E] transition-colors"
+      onclick="alert('Sign Up functionality coming soon!')"
+    >
+      Sign Up
+    </button>
+  </nav>
+</header>
