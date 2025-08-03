@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LandingHeader from '../components/LandingHeader';
 import LandingFooter from '../components/LandingFooter';
-import '../styles/globals.css';
+import '../styles/globals.css'; // Make sure this path is correct!
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
