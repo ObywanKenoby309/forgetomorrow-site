@@ -1,7 +1,17 @@
+// components/Footer.js
+
 export default function Footer() {
   return (
-    <footer className="bg-[#37474F] text-white text-center py-4 mt-8 shadow-inner">
-      <p>© {new Date().getFullYear()} ForgeTomorrow. All rights reserved.</p>
+    <footer className="bg-[#222] text-gray-300 text-center py-6 mt-12">
+      <p>
+        &copy; {new Date().getFullYear()} ForgeTomorrow. All rights reserved.
+      </p>
+      <p>
+        <a href="mailto:forgetomorrowteam@gmail.com" className="text-[#FF7043] underline">
+          Contact Us
+        </a>
+      </p>
     </footer>
   );
 }
+
