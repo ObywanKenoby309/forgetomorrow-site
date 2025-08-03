@@ -1,8 +1,28 @@
 // pages/jobs.js
 import Head from 'next/head';
 import Link from 'next/link';
+import { useJobPipeline } from '../context/JobPipelineContext';
 
 export default function Jobs() {
+  const { addViewedJob, addAppliedJob } = useJobPipeline();
+
+  // Example job listings - replace with your real data
+  const jobs = [
+    { id: 'job-123', title: 'Software Engineer', company: 'Tech Innovators', date: '2025-07-30' },
+    { id: 'job-456', title: 'Product Designer', company: 'Creative Solutions', date: '2025-07-31' },
+    { id: 'job-789', title: 'Marketing Coordinator', company: 'MarketMedia', date: '2025-07-31' },
+  ];
+
+  const handleViewJob = (job) => {
+    addViewedJob(job);
+    alert(`Viewing job: ${job.title} at ${job.company}`);
+  };
+
+  const handleApplyJob = (job) => {
+    addAppliedJob(job);
+    alert(`Applied to job: ${job.title} at ${job.company}`);
+  };
+
   return (
     <>
       <Head>
@@ -28,7 +48,8 @@ export default function Jobs() {
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main content: 2/3 width */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Search Filters */}
+
+            {/* Search Filters (static for now) */}
             <form className="flex flex-col sm:flex-row gap-3" role="search" aria-label="Job search form">
               <input
                 type="text"
@@ -57,26 +78,33 @@ export default function Jobs() {
             <div className="bg-white p-6 rounded-lg shadow">
               <h2 className="text-xl font-semibold mb-4 text-[#FF7043]">Recent Job Listings</h2>
               <ul className="space-y-3" role="list" aria-label="Recent job listings">
-                <li className="flex justify-between">
-                  <div><strong>Software Engineer</strong> – Tech Innovators</div>
-                  <time dateTime="2025-07-30" className="text-gray-500 text-sm">3d ago</time>
-                </li>
-                <li className="flex justify-between">
-                  <div><strong>Product Designer</strong> – Creative Solutions</div>
-                  <time dateTime="2025-07-31" className="text-gray-500 text-sm">2d ago</time>
-                </li>
-                <li className="flex justify-between">
-                  <div><strong>Marketing Coordinator</strong> – MarketMedia</div>
-                  <time dateTime="2025-07-31" className="text-gray-500 text-sm">2d ago</time>
-                </li>
-                <li className="flex justify-between">
-                  <div><strong>Data Analyst</strong> – Data Corp</div>
-                  <time dateTime="2025-08-01" className="text-gray-500 text-sm">1d ago</time>
-                </li>
+                {jobs.map((job) => (
+                  <li key={job.id} className="flex justify-between items-center border-b border-gray-200 py-2">
+                    <div>
+                      <strong>{job.title}</strong> – {job.company}
+                    </div>
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() => handleViewJob(job)}
+                        className="text-[#FF7043] hover:underline font-semibold"
+                        aria-label={`View details for ${job.title}`}
+                      >
+                        View
+                      </button>
+                      <button
+                        onClick={() => handleApplyJob(job)}
+                        className="bg-[#FF7043] hover:bg-[#F4511E] text-white px-3 py-1 rounded"
+                        aria-label={`Apply to ${job.title}`}
+                      >
+                        Apply
+                      </button>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Featured Jobs */}
+            {/* Featured Jobs (static example) */}
             <div className="bg-white p-6 rounded-lg shadow">
               <h2 className="text-xl font-semibold mb-4 text-[#FF7043]">Featured Jobs</h2>
               <ul className="space-y-4" role="list" aria-label="Featured job listings">
