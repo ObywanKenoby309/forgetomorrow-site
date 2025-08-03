@@ -84,3 +84,33 @@ export default function Jobs() {
                   <strong>Sales Representative</strong><br />
                   Global Enterprises – New York, NY
                 </li>
+                <li className="bg-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                  <strong>UI/UX Designer</strong><br />
+                  Design Hub – Remote
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Sidebar: 1/3 width */}
+          <aside className="bg-[#37474F] text-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+            <div>
+              <h2 className="text-3xl font-bold mb-3">Find your dream job</h2>
+              <p className="mb-6 text-sm leading-relaxed">
+                Browse through hundreds of job listings and apply to opportunities in seconds.
+              </p>
+              <Link href="/signup" passHref>
+                <a
+                  className="bg-[#FF7043] hover:bg-[#F4511E] w-full py-3 rounded-lg font-semibold transition-colors block text-center"
+                  aria-label="Create account"
+                >
+                  Create Account
+                </a>
+              </Link>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </>
+  );
+}
