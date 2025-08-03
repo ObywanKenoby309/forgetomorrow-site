@@ -1,86 +1,85 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ForgeTomorrow - Tools</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-[#ECEFF1] text-[#212121]">
+// pages/tools.js
+import Head from 'next/head';
 
-  <!-- Header placeholder -->
-  <div id="header-placeholder"></div>
+export default function Tools() {
+  const alertComingSoon = (feature) => () => alert(`${feature} feature coming soon!`);
 
-  <main class="max-w-5xl mx-auto p-6 space-y-12 min-h-[80vh]">
+  return (
+    <>
+      <Head>
+        <title>ForgeTomorrow - Tools</title>
+      </Head>
 
-    <h1 class="text-4xl font-bold text-[#FF7043] mb-6 text-center">Tools & Resources</h1>
+      <main className="max-w-7xl mx-auto p-6 min-h-[80vh] bg-[#ECEFF1] text-[#212121] space-y-8">
+        <section>
+          <h1 className="text-4xl font-bold text-[#FF7043] mb-2">Your Tools</h1>
+          <p className="text-gray-700 max-w-3xl mb-6">
+            Access powerful resources to optimize your job search — from resume and cover letter editors to interview prep and ATS tips.
+          </p>
+        </section>
 
-    <section class="grid gap-10 md:grid-cols-2">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div
+            className="bg-white rounded-lg shadow p-6 cursor-pointer hover:shadow-md transition-shadow"
+            role="button"
+            tabIndex={0}
+            onClick={alertComingSoon('Resume Builder')}
+            onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Resume Builder')(); }}
+            aria-label="Resume Builder"
+          >
+            <h2 className="text-2xl font-semibold text-[#FF7043] mb-3">Resume Builder</h2>
+            <p>Create or upload resumes, customize formats, and export polished documents ready to apply.</p>
+          </div>
 
-      <!-- The Pipeline -->
-      <div
-        class="bg-white rounded-lg shadow p-8 cursor-pointer hover:shadow-lg transition-shadow"
-        onclick="window.location.href='the-pipeline.html'"
-        tabindex="0"
-        role="button"
-        aria-label="Go to The Pipeline (Jobs)"
-      >
-        <h2 class="text-3xl font-semibold text-[#FF7043] mb-4">The Pipeline</h2>
-        <p class="text-gray-700 mb-6">
-          Browse and apply to curated job listings tailored to your skills and preferences. Our AI helps surface the best opportunities.
-        </p>
-        <button
-          class="bg-[#FF7043] hover:bg-[#F4511E] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-          aria-label="Explore The Pipeline"
-        >
-          Explore Jobs
-        </button>
-      </div>
+          <div
+            className="bg-white rounded-lg shadow p-6 cursor-pointer hover:shadow-md transition-shadow"
+            role="button"
+            tabIndex={0}
+            onClick={alertComingSoon('Cover Letter Editor')}
+            onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Cover Letter Editor')(); }}
+            aria-label="Cover Letter Editor"
+          >
+            <h2 className="text-2xl font-semibold text-[#FF7043] mb-3">Cover Letter Editor</h2>
+            <p>Craft tailored cover letters with templates and expert tips for every job application.</p>
+          </div>
 
-      <!-- The Hearth -->
-      <div
-        class="bg-white rounded-lg shadow p-8 cursor-pointer hover:shadow-lg transition-shadow"
-        onclick="window.location.href='the-hearth.html'"
-        tabindex="0"
-        role="button"
-        aria-label="Go to The Hearth (Networking)"
-      >
-        <h2 class="text-3xl font-semibold text-[#FF7043] mb-4">The Hearth</h2>
-        <p class="text-gray-700 mb-6">
-          Connect, network, and collaborate with your contacts, mentors, and community. Manage your connections and upcoming events all in one place.
-        </p>
-        <button
-          class="bg-[#FF7043] hover:bg-[#F4511E] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-          aria-label="Explore The Hearth"
-        >
-          Explore Network
-        </button>
-      </div>
+          <div
+            className="bg-white rounded-lg shadow p-6 cursor-pointer hover:shadow-md transition-shadow"
+            role="button"
+            tabIndex={0}
+            onClick={alertComingSoon('ATS Optimization')}
+            onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('ATS Optimization')(); }}
+            aria-label="ATS Optimization"
+          >
+            <h2 className="text-2xl font-semibold text-[#FF7043] mb-3">ATS Optimization</h2>
+            <p>Analyze your resume to improve keyword matching and get past applicant tracking systems.</p>
+          </div>
 
-    </section>
+          <div
+            className="bg-white rounded-lg shadow p-6 cursor-pointer hover:shadow-md transition-shadow"
+            role="button"
+            tabIndex={0}
+            onClick={alertComingSoon('Interview Prep')}
+            onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Interview Prep')(); }}
+            aria-label="Interview Prep"
+          >
+            <h2 className="text-2xl font-semibold text-[#FF7043] mb-3">Interview Prep</h2>
+            <p>Practice common interview questions and get tips to impress hiring managers.</p>
+          </div>
 
-  </main>
-
-  <!-- Footer placeholder -->
-  <div id="footer-placeholder"></div>
-
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('header-placeholder').innerHTML = html)
-      .catch(err => console.error('Error loading header:', err));
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
-      .catch(err => console.error('Error loading footer:', err));
-  </script>
-
-</body>
-</html>
+          <div
+            className="bg-white rounded-lg shadow p-6 cursor-pointer hover:shadow-md transition-shadow"
+            role="button"
+            tabIndex={0}
+            onClick={alertComingSoon('Mentorship & Coaching')}
+            onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Mentorship & Coaching')(); }}
+            aria-label="Mentorship and Coaching"
+          >
+            <h2 className="text-2xl font-semibold text-[#FF7043] mb-3">Mentorship & Coaching</h2>
+            <p>Connect with mentors and coaches for personalized guidance and support.</p>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
