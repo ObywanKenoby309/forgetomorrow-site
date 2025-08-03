@@ -1,100 +1,92 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ForgeTomorrow - Sign Up</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ECEFF1;
-      color: #212121;
-    }
-  </style>
-</head>
-<body class="flex items-center justify-center min-h-screen">
+// pages/signup.js
+import Head from 'next/head';
 
-  <!-- Header placeholder -->
-  <div id="header-placeholder" class="fixed top-0 left-0 right-0 z-10"></div>
+export default function Signup() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Sign Up functionality coming soon!');
+  };
 
-  <main class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mt-20">
-    <h1 class="text-3xl font-bold text-[#FF7043] mb-6 text-center">Create Your Account</h1>
+  return (
+    <>
+      <Head>
+        <title>ForgeTomorrow - Sign Up</title>
+      </Head>
 
-    <form id="signupForm" class="space-y-6">
-      <div>
-        <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          placeholder="Your full name"
-          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
-        />
-      </div>
-      <div>
-        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          placeholder="you@example.com"
-          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
-        />
-      </div>
-      <div>
-        <label for="password" class="block text-gray-700 font-semibold mb-2">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          placeholder="Create a password"
-          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
-        />
-      </div>
-      <div>
-        <label for="confirmPassword" class="block text-gray-700 font-semibold mb-2">Confirm Password</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          required
-          placeholder="Confirm your password"
-          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
-        />
-      </div>
+      <main className="flex items-center justify-center min-h-screen bg-[#ECEFF1] text-[#212121] px-4">
+        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mt-20">
+          <h1 className="text-3xl font-bold text-[#FF7043] mb-6 text-center">Create Your Account</h1>
 
-      <button
-        type="submit"
-        class="w-full bg-[#FF7043] text-white py-3 rounded font-semibold hover:bg-[#F4511E] transition-colors"
-      >
-        Sign Up
-      </button>
-    </form>
+          <form id="signupForm" className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your full name"
+                className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Create a password"
+                className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
+              />
+            </div>
+            <div>
+              <label htmlFor="confirmPassword" className="block text-gray-700 font-semibold mb-2">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                required
+                placeholder="Confirm your password"
+                className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#FF7043]"
+              />
+            </div>
 
-    <p class="mt-6 text-center text-gray-600">
-      Already have an account? <a href="login.html" class="text-[#FF7043] font-semibold hover:underline">Login</a>
-    </p>
-  </main>
+            <button
+              type="submit"
+              className="w-full bg-[#FF7043] text-white py-3 rounded font-semibold hover:bg-[#F4511E] transition-colors"
+            >
+              Sign Up
+            </button>
+          </form>
 
-  <!-- Footer placeholder -->
-  <div id="footer-placeholder" class="mt-12"></div>
-
-  <script>
-    fetch('header-landing.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('header-placeholder').innerHTML = html)
-      .catch(err => console.error('Error loading header:', err));
-
-    fetch('footer-public.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
-      .catch(err => console.error('Error loading footer:', err));
-  </script>
-
-</body>
-</html>
+          <p className="mt-6 text-center text-gray-600">
+            Already have an account?{' '}
+            <a href="/login" className="text-[#FF7043] font-semibold hover:underline">
+              Login
+            </a>
+          </p>
+        </div>
+      </main>
+    </>
+  );
+}
