@@ -179,15 +179,19 @@
   </script>
 
   <script>
-    fetch('header-landing.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('header-placeholder').innerHTML = html)
-      .catch(err => console.error('Error loading header:', err));
+    <div id="header-placeholder">
+      <!-- Temporary header content -->
+      <header style="background:#222;color:#fff;padding:1rem;text-align:center;">
+    ForgeTomorrow Header Placeholder
+  </header>
+</div>
 
-    fetch('footer-public.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
-      .catch(err => console.error('Error loading footer:', err));
+    <div id="footer-placeholder">
+      <!-- Temporary footer content -->
+      <footer style="background:#222;color:#fff;padding:1rem;text-align:center;">
+      ForgeTomorrow Footer Placeholder
+  </footer>
+</div>
   </script>
 
 </body>
