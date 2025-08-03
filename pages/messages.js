@@ -1,212 +1,99 @@
 // pages/messages.js
-import { useState } from 'react';
 import Head from 'next/head';
 
-const threadsData = [
-  {
-    id: '1',
-    name: 'Jane Doe',
-    preview: 'Hey Eric, excited about ForgeTomorrow!',
-    messages: [
-      { type: 'received', text: 'Hey Eric! Excited about ForgeTomorrow?', time: '10:15 AM' },
-      { type: 'sent', text: 'Absolutely! Can’t wait to get started.', time: '10:17 AM' },
-    ],
-  },
-  {
-    id: '2',
-    name: 'John Smith',
-    preview: "Let's schedule a call.",
-    messages: [
-      { type: 'received', text: "Let's schedule a call.", time: 'Yesterday 2:00 PM' },
-      { type: 'sent', text: 'Sure, how about tomorrow?', time: 'Yesterday 2:05 PM' },
-    ],
-  },
-  {
-    id: '3',
-    name: 'Samantha Lee',
-    preview: 'Thanks for the update.',
-    messages: [
-      { type: 'received', text: 'Thanks for the update.', time: 'Monday 9:30 AM' },
-      { type: 'sent', text: 'You’re welcome!', time: 'Monday 9:35 AM' },
-    ],
-  },
-];
-
-export default function Messages() {
-  const [activeThreadId, setActiveThreadId] = useState('1');
-  const [threads, setThreads] = useState(threadsData);
-  const [newMessage, setNewMessage] = useState('');
-
-  const activeThread = threads.find((thread) => thread.id === activeThreadId);
-
-  const selectThread = (id) => {
-    setActiveThreadId(id);
-  };
-
-  const sendMessage = () => {
-    const text = newMessage.trim();
-    if (!text) return;
-
-    const updatedThreads = threads.map((thread) => {
-      if (thread.id === activeThreadId) {
-        return {
-          ...thread,
-          messages: [...thread.messages, { type: 'sent', text, time: 'Now' }],
-          preview: text,
-        };
-      }
-      return thread;
-    });
-
-    setThreads(updatedThreads);
-    setNewMessage('');
-  };
+export default function TheSignal() {
+  // Alert placeholders for features
+  const alertComingSoon = (feature) => () => alert(`${feature} feature coming soon!`);
 
   return (
     <>
       <Head>
-        <title>ForgeTomorrow - Messages</title>
+        <title>ForgeTomorrow - The Signal</title>
       </Head>
 
-      <main
-        style={{
-          maxWidth: '900px',
-          margin: '0 auto',
-          flexGrow: 1,
-          display: 'flex',
-          background: '#222',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          height: 'calc(100vh - 160px)',
-          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-          color: '#f5f5f5',
-          flexDirection: 'row',
-        }}
-      >
-        <div
-          style={{
-            width: '300px',
-            background: '#1a1a1a',
-            borderRight: '1px solid #444',
-            overflowY: 'auto',
-          }}
-        >
-          {threads.map((thread) => (
-            <div
-              key={thread.id}
-              onClick={() => selectThread(thread.id)}
-              style={{
-                padding: '1rem',
-                borderBottom: '1px solid #333',
-                cursor: 'pointer',
-                color: thread.id === activeThreadId ? 'white' : '#ccc',
-                backgroundColor: thread.id === activeThreadId ? '#ff4500' : 'transparent',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.25rem',
-              }}
-            >
-              <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>{thread.name}</div>
+      <body className="bg-[#ECEFF1] text-[#212121]">
+        {/* Header placeholder assumed in layout */}
+
+        <main className="max-w-4xl mx-auto p-6 space-y-8 min-h-[80vh]">
+          <h1 className="text-4xl font-bold text-[#FF7043] mb-6 text-center">The Signal</h1>
+
+          <section className="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row gap-6 min-h-[60vh]">
+            {/* Threads list */}
+            <div className="threads w-full md:w-72 bg-[#1a1a1a] border border-gray-700 rounded-md overflow-y-auto">
               <div
-                style={{
-                  fontSize: '0.85rem',
-                  color: '#999',
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                }}
+                className="thread active p-4 border-b border-gray-700 cursor-pointer bg-[#ff4500] text-white"
+                tabIndex={0}
+                role="button"
+                aria-label="Chat with Jane Doe"
+                onClick={alertComingSoon('Chat with Jane Doe')}
+                onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Chat with Jane Doe')(); }}
               >
-                {thread.preview}
+                <div className="name font-bold text-lg">Jane Doe</div>
+                <div className="preview text-sm text-gray-300 truncate">Hey Eric, excited about ForgeTomorrow!</div>
+                <div className="time text-xs text-gray-400 text-right">2h ago</div>
               </div>
-              <div style={{ fontSize: '0.75rem', color: '#666', alignSelf: 'flex-end' }}>
-                {thread.messages.length > 0
-                  ? thread.messages[thread.messages.length - 1].time
-                  : ''}
+              <div
+                className="thread p-4 border-b border-gray-700 cursor-pointer hover:bg-[#ff7043] hover:text-white"
+                tabIndex={0}
+                role="button"
+                aria-label="Chat with John Smith"
+                onClick={alertComingSoon('Chat with John Smith')}
+                onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Chat with John Smith')(); }}
+              >
+                <div className="name font-bold text-lg">John Smith</div>
+                <div className="preview text-sm text-gray-300 truncate">Let's schedule a call.</div>
+                <div className="time text-xs text-gray-400 text-right">1d ago</div>
+              </div>
+              <div
+                className="thread p-4 border-b border-gray-700 cursor-pointer hover:bg-[#ff7043] hover:text-white"
+                tabIndex={0}
+                role="button"
+                aria-label="Chat with Samantha Lee"
+                onClick={alertComingSoon('Chat with Samantha Lee')}
+                onKeyPress={(e) => { if(e.key === 'Enter') alertComingSoon('Chat with Samantha Lee')(); }}
+              >
+                <div className="name font-bold text-lg">Samantha Lee</div>
+                <div className="preview text-sm text-gray-300 truncate">Thanks for the update.</div>
+                <div className="time text-xs text-gray-400 text-right">3d ago</div>
               </div>
             </div>
-          ))}
-        </div>
 
-        <div
-          style={{
-            flexGrow: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '1rem',
-            color: '#eee',
-          }}
-        >
-          <div
-            style={{
-              flexGrow: 1,
-              overflowY: 'auto',
-              marginBottom: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.75rem',
-            }}
-          >
-            {activeThread.messages.map((msg, i) => (
-              <div
-                key={i}
-                style={{
-                  maxWidth: '70%',
-                  padding: '0.75rem 1rem',
-                  borderRadius: '15px',
-                  lineHeight: 1.3,
-                  backgroundColor: msg.type === 'sent' ? '#ff4500' : '#333',
-                  color: msg.type === 'sent' ? 'white' : '#ddd',
-                  alignSelf: msg.type === 'sent' ? 'flex-end' : 'flex-start',
-                  borderBottomRightRadius: msg.type === 'sent' ? 0 : undefined,
-                  borderBottomLeftRadius: msg.type === 'received' ? 0 : undefined,
-                }}
-              >
-                {msg.text}
-                <div style={{ fontSize: '0.65rem', color: '#bbb', marginTop: '0.25rem', textAlign: 'right' }}>
-                  {msg.time}
+            {/* Chat area */}
+            <div className="chat flex-grow flex flex-col bg-[#222] rounded-md p-6 text-[#eee]">
+              <div className="messages flex-grow overflow-y-auto space-y-4 mb-4">
+                <div className="message received max-w-[70%] bg-[#333] rounded-2xl rounded-bl-none p-4">
+                  Hey Eric! Excited about ForgeTomorrow?
+                  <div className="time text-xs text-gray-400 mt-1 text-right">10:15 AM</div>
+                </div>
+                <div className="message sent max-w-[70%] bg-[#ff4500] rounded-2xl rounded-br-none p-4 self-end">
+                  Absolutely! Can’t wait to get started.
+                  <div className="time text-xs text-gray-400 mt-1 text-right">10:17 AM</div>
                 </div>
               </div>
-            ))}
-          </div>
 
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <textarea
-              placeholder="Type your message..."
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-              style={{
-                flexGrow: 1,
-                resize: 'none',
-                borderRadius: '5px',
-                border: 'none',
-                padding: '0.75rem 1rem',
-                fontSize: '1rem',
-                background: '#333',
-                color: 'white',
-                height: '60px',
-                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-              }}
-            />
-            <button
-              onClick={sendMessage}
-              style={{
-                background: '#ff4500',
-                border: 'none',
-                color: 'white',
-                padding: '0 1.5rem',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-                transition: 'background 0.3s',
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.background = '#e03d00')}
-              onMouseOut={(e) => (e.currentTarget.style.background = '#ff4500')}
-            >
-              Send
-            </button>
-          </div>
-        </div>
-      </main>
+              <div className="input-area flex gap-2">
+                <textarea
+                  id="message-input"
+                  placeholder="Type your message..."
+                  className="flex-grow resize-none rounded-md p-3 bg-[#333] text-white focus:outline-none"
+                  rows={3}
+                  disabled
+                  aria-label="Message input (coming soon)"
+                />
+                <button
+                  className="bg-[#ff4500] px-6 rounded-md font-bold text-white cursor-not-allowed"
+                  disabled
+                  aria-label="Send message button (coming soon)"
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        {/* Footer placeholder assumed in layout */}
+      </body>
     </>
   );
 }
