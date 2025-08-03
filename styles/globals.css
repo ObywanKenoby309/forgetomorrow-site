@@ -1,0 +1,12 @@
+/* styles/globals.css */
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ECEFF1;
+  color: #212121;
+}
+
+* {
+  box-sizing: border-box;
+}
