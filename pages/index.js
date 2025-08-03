@@ -53,3 +53,91 @@ export default function Home() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={inputStyle}
+          />
+          <button type="submit" className="btn-primary" style={buttonStyle}>
+            Join the Waitlist
+          </button>
+        </form>
+      </main>
+    </>
+  );
+}
+
+// Styles translated from your CSS
+const contentContainerStyle = {
+  position: 'relative',
+  zIndex: 10,
+  maxWidth: '700px',
+  margin: '5rem auto 3rem',
+  background: 'rgba(0,0,0,0.55)',
+  padding: '2.5rem 2rem',
+  borderRadius: '12px',
+  textAlign: 'center',
+  boxShadow: '0 8px 24px rgba(0,0,0,0.7)',
+  wordWrap: 'break-word',
+  maxWidth: '90vw',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
+  fontFamily: "'Inter', sans-serif",
+  color: '#eee',
+  backgroundImage: "url('/images/forge-bg-bw.png')",
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center center',
+  backgroundAttachment: 'fixed',
+  backgroundSize: 'cover',
+};
+
+const h1Style = {
+  fontSize: '5rem',
+  color: '#FF7043',
+  fontWeight: 800,
+  marginBottom: '1rem',
+  letterSpacing: '0.06em',
+  textShadow: '0 0 10px rgba(255,112,67,0.8)',
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  overflowWrap: 'break-word',
+  maxWidth: '100%',
+  wordBreak: 'break-word',
+};
+
+const pStyle = {
+  fontWeight: 400,
+  fontSize: '1.25rem',
+  color: '#ddd',
+  lineHeight: 1.6,
+  marginBottom: '1.5rem',
+};
+
+const inputStyle = {
+  backgroundColor: '#fff',
+  color: '#222',
+  border: '1px solid #ccc',
+  padding: '0.75rem 1rem',
+  borderRadius: '8px',
+  width: '100%',
+  maxWidth: '400px',
+  fontSize: '1.1rem',
+  margin: '0 auto 1rem auto',
+  display: 'block',
+  boxShadow: 'none',
+  outline: 'none',
+};
+
+const buttonStyle = {
+  backgroundColor: '#FF7043',
+  color: '#fff',
+  fontWeight: 700,
+  padding: '1rem 3rem',
+  borderRadius: '8px',
+  fontSize: '1.25rem',
+  border: 'none',
+  cursor: 'pointer',
+  transition: 'background-color 0.3s ease',
+  boxShadow: '0 4px 10px rgba(255, 112, 67, 0.5)',
+};
+
+// You can add hover effects with CSS modules or styled-jsx as needed
