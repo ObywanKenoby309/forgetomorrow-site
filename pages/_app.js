@@ -1,11 +1,11 @@
 // pages/_app.js
-import '../public/style.css';  // Adjust the path if your CSS is somewhere else
-import Layout from '../components/Layout';
+import { JobPipelineProvider } from '../context/JobPipelineContext';
+import '../styles/globals.css'; // Assuming you have a global CSS file
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
+    <JobPipelineProvider>
       <Component {...pageProps} />
-    </Layout>
+    </JobPipelineProvider>
   );
 }
