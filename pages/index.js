@@ -1,198 +1,55 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ForgeTomorrow - About</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: url('/images/forge-bg-bw.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #eee;
-      position: relative;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0,0,0,0.65);
-      z-index: 0;
-    }
-    .content-container {
-      position: relative;
-      z-index: 10;
-      max-width: 700px;
-      margin: 5rem auto 3rem;
-      background: rgba(0,0,0,0.55);
-      padding: 2.5rem 2rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
-      overflow-wrap: break-word;
-      word-break: break-word;
-      word-wrap: break-word;
-      max-width: 90vw;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    /* Scoped styles only for the content container h1 */
-    .content-container h1 {
-      font-size: 5rem !important;
-      color: #FF7043 !important;
-      font-weight: 800 !important;
-      margin-bottom: 1rem !important;
-      letter-spacing: 0.06em !important;
-      text-shadow: 0 0 10px rgba(255,112,67,0.8);
-      white-space: normal !important;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      max-width: 100%;
-      word-break: break-word;
-    }
-    p {
-      font-weight: 400;
-      font-size: 1.25rem;
-      color: #ddd;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    input[type="email"] {
-      background-color: #fff !important;
-      color: #222 !important;
-      border: 1px solid #ccc !important;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      width: 100%;
-      max-width: 400px;
-      font-size: 1.1rem;
-      margin: 0 auto 1rem auto;
-      display: block;
-      box-shadow: none;
-    }
-    input[type="email"]::placeholder {
-      color: #555;
-    }
-    .btn-primary {
-      background-color: #FF7043;
-      color: #fff;
-      font-weight: 700;
-      padding: 1rem 3rem;
-      border-radius: 8px;
-      font-size: 1.25rem;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(255, 112, 67, 0.5);
-    }
-    .btn-primary:hover {
-      background-color: #F4511E;
-      box-shadow: 0 6px 15px rgba(244, 81, 30, 0.7);
-    }
-    @media (max-width: 640px) {
-      /* Only scale down the content container h1 */
-      .content-container h1 {
-        font-size: 6vw !important;
-        white-space: normal !important;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .content-container {
-        margin: 3rem 1rem 2rem;
-        padding: 2rem 1.5rem;
-        max-width: 95vw;
-      }
-      input[type="email"] {
-        max-width: 100%;
-      }
-      .btn-primary {
-        padding: 0.9rem 2.5rem;
-        font-size: 1.1rem;
-      }
-    }
-  </style>
-</head>
-<body>
+// pages/index.js
+import { useState } from 'react';
+import Head from 'next/head';
 
-  <div id="header-placeholder"></div>
+export default function Home() {
+  const [email, setEmail] = useState('');
 
-  <main class="content-container" role="main" aria-label="About ForgeTomorrow">
-    <h1>Forge Tomorrow</h1>
-    <p>
-      We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the real world.
-    </p>
-    <p>
-      Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and transparency they need to succeed in today’s fast-changing job market.
-      No gatekeeping. No noise. Just support that shows up, AI with integrity, and a network where people come before algorithms.
-    </p>
-
-    <form id="waitlist-form" onsubmit="sendWaitlistEmail(event)">
-      <input
-        type="email"
-        name="user_email"
-        id="user_email"
-        placeholder="Enter your email"
-        required
-      />
-      <button type="submit" class="btn-primary">Join the Waitlist</button>
-    </form>
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-
-  <script>
-    (function() {
-      emailjs.init('YyYidv88o9X7iKfYJ'); // Your public key (User ID)
-    })();
-
-    function sendWaitlistEmail(event) {
-      event.preventDefault();
-      const emailInput = document.getElementById('user_email');
-      if (!emailInput.value) {
-        alert('Please enter a valid email.');
-        return;
-      }
-
-      emailjs.send('service_quxmizv', 'forgetomorrow', {
-        user_email: emailInput.value
-      })
-      .then(() => {
-        alert("Success! You're added.\n\"We don't like ghosts. We will always respond and provide transparency.\"");
-        emailInput.value = '';
-      }, (error) => {
-        alert('Oops! Something went wrong. Please try again later.');
-        console.error('EmailJS error:', error);
-      });
+  // emailjs is a client-only lib; load dynamically or via script tag in _document.js if preferred
+  const sendWaitlistEmail = async (e) => {
+    e.preventDefault();
+    if (!email) {
+      alert('Please enter a valid email.');
+      return;
     }
-  </script>
 
-  <script>
-    <div id="header-placeholder">
-      <!-- Temporary header content -->
-      <header style="background:#222;color:#fff;padding:1rem;text-align:center;">
-    ForgeTomorrow Header Placeholder
-  </header>
-</div>
+    try {
+      // Using global emailjs from script included in _document.js or index.html
+      // If emailjs is not global, you may need to import or load it dynamically
+      await window.emailjs.send('service_quxmizv', 'forgetomorrow', { user_email: email });
+      alert(`Success! You're added.\n"We don't like ghosts. We will always respond and provide transparency."`);
+      setEmail('');
+    } catch (error) {
+      alert('Oops! Something went wrong. Please try again later.');
+      console.error('EmailJS error:', error);
+    }
+  };
 
-    <div id="footer-placeholder">
-      <!-- Temporary footer content -->
-      <footer style="background:#222;color:#fff;padding:1rem;text-align:center;">
-      ForgeTomorrow Footer Placeholder
-  </footer>
-</div>
-  </script>
+  return (
+    <>
+      <Head>
+        <title>ForgeTomorrow - About</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-</body>
-</html>
+      <main style={contentContainerStyle} role="main" aria-label="About ForgeTomorrow">
+        <h1 style={h1Style}>Forge Tomorrow</h1>
+        <p style={pStyle}>
+          We’re building the next evolution in professional networking—human-centered, AI-empowered, and built for the
+          real world.
+        </p>
+        <p style={pStyle}>
+          Our mission is to equip job seekers, freelancers, recruiters, mentors, and ethical employers with the tools and
+          transparency they need to succeed in today’s fast-changing job market. No gatekeeping. No noise. Just support
+          that shows up, AI with integrity, and a network where people come before algorithms.
+        </p>
+
+        <form id="waitlist-form" onSubmit={sendWaitlistEmail}>
+          <input
+            type="email"
+            name="user_email"
+            id="user_email"
+            placeholder="Enter your email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
