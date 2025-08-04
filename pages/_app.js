@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
   const landingPages = ['/', '/login', '/signup', '/about'];
 
   // Pages where footer is hidden
-  const noFooterPages = ['/feed', '/pipeline'];
+  const noFooterPages = ['/feed', '/jobs'];
 
   const useLandingHeaderFooter = landingPages.includes(router.pathname);
 
