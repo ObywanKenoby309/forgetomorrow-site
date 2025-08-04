@@ -1,5 +1,7 @@
 // pages/feed.js
 import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Feed() {
   const handleReact = () => alert('React feature coming soon!');
@@ -10,7 +12,9 @@ export default function Feed() {
         <title>ForgeTomorrow - Community Feed</title>
       </Head>
 
-      <main className="max-w-4xl mx-auto p-6 space-y-8 min-h-[80vh] bg-[#ECEFF1] text-[#212121]">
+      <Header />
+
+      <main className="max-w-4xl mx-auto p-6 space-y-8 min-h-[80vh] bg-[#ECEFF1] text-[#212121] pt-20">
         <h1 className="text-4xl font-bold text-[#FF7043] mb-6 text-center">Community Feed</h1>
 
         <section className="space-y-6">
@@ -40,6 +44,8 @@ export default function Feed() {
           {/* More posts can be added dynamically here */}
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
