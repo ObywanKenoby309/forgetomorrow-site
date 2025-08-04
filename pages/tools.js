@@ -1,5 +1,7 @@
 // pages/tools.js
 import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Tools() {
   const alertComingSoon = (feature) => () => alert(`${feature} feature coming soon!`);
@@ -10,7 +12,9 @@ export default function Tools() {
         <title>ForgeTomorrow - Tools</title>
       </Head>
 
-      <main className="max-w-7xl mx-auto p-6 min-h-[80vh] bg-[#ECEFF1] text-[#212121] space-y-8">
+      <Header />
+
+      <main className="max-w-7xl mx-auto p-6 min-h-[80vh] bg-[#ECEFF1] text-[#212121] space-y-8 pt-20">
         <section>
           <h1 className="text-4xl font-bold text-[#FF7043] mb-2">Your Tools</h1>
           <p className="text-gray-700 max-w-3xl mb-6">
@@ -80,6 +84,8 @@ export default function Tools() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
