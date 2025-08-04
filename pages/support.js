@@ -1,5 +1,7 @@
 // pages/support.js
 import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Support() {
   return (
@@ -8,7 +10,9 @@ export default function Support() {
         <title>ForgeTomorrow - Support</title>
       </Head>
 
-      <main className="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh] bg-[#ECEFF1] text-[#212121]">
+      <Header />
+
+      <main className="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh] bg-[#ECEFF1] text-[#212121] pt-20">
         <h1 className="text-4xl font-bold text-[#FF7043] mb-6 text-center">Support Center</h1>
 
         <section className="bg-white rounded-lg shadow p-8 space-y-6">
@@ -73,6 +77,8 @@ export default function Support() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
