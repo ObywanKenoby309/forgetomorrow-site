@@ -1,5 +1,7 @@
 // pages/profile.js
 import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Profile() {
   const alertFeatureComingSoon = (feature) => () => alert(`${feature} feature coming soon!`);
@@ -10,7 +12,9 @@ export default function Profile() {
         <title>ForgeTomorrow - Profile</title>
       </Head>
 
-      <main className="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh] bg-[#ECEFF1] text-[#212121]">
+      <Header />
+
+      <main className="max-w-4xl mx-auto p-6 space-y-10 min-h-[80vh] bg-[#ECEFF1] text-[#212121] pt-20">
         {/* Top Section: Image and Basic Info */}
         <section className="bg-white rounded-lg shadow p-8 flex flex-col items-center sm:flex-row sm:items-center sm:space-x-8 relative">
           {/* Profile Picture */}
@@ -71,7 +75,7 @@ export default function Profile() {
           tabIndex={0}
           role="button"
           aria-label="Go to Professional History"
-          onKeyPress={(e) => { if(e.key === 'Enter') alertFeatureComingSoon('Professional History section')(); }}
+          onKeyPress={(e) => { if (e.key === 'Enter') alertFeatureComingSoon('Professional History section')(); }}
         >
           <h2 className="text-2xl font-semibold text-[#FF7043]">Professional History</h2>
           <span className="text-[#FF7043] font-bold text-xl">→</span>
@@ -84,12 +88,14 @@ export default function Profile() {
           tabIndex={0}
           role="button"
           aria-label="Go to Analytics Dashboard"
-          onKeyPress={(e) => { if(e.key === 'Enter') alertFeatureComingSoon('Analytics dashboard')(); }}
+          onKeyPress={(e) => { if (e.key === 'Enter') alertFeatureComingSoon('Analytics dashboard')(); }}
         >
           <h2 className="text-2xl font-semibold text-[#FF7043]">Analytics</h2>
           <span className="text-[#FF7043] font-bold text-xl">→</span>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
