@@ -1,6 +1,8 @@
 // pages/features.js
 import Head from 'next/head';
 import FeaturesList from '../components/FeaturesList';
+import LandingHeader from '../components/LandingHeader';
+import LandingFooter from '../components/LandingFooter';
 
 export default function Features() {
   const features = [
@@ -21,11 +23,21 @@ export default function Features() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="max-w-3xl mx-auto p-6 space-y-8 min-h-[80vh] bg-[#1a1a1a] text-[#f5f5f5] rounded-lg shadow">
-        <h1 className="text-4xl font-bold text-[#ff9900] text-center mb-6">Features</h1>
-        <h2 className="text-2xl font-semibold text-[#ff9900] text-center mb-4">Empowering Everyone</h2>
-        <FeaturesList features={features} />
+      <LandingHeader />
+
+      <main
+        role="main"
+        aria-label="Features of ForgeTomorrow"
+        className="max-w-3xl mx-auto p-6 space-y-8 min-h-[80vh] bg-[#1a1a1a] text-[#f5f5f5] rounded-lg shadow my-20 sm:my-24"
+      >
+        <section>
+          <h1 className="text-4xl font-bold text-[#ff9900] text-center mb-6">Features</h1>
+          <h2 className="text-2xl font-semibold text-[#ff9900] text-center mb-4">Empowering Everyone</h2>
+          <FeaturesList features={features} />
+        </section>
       </main>
+
+      <LandingFooter />
     </>
   );
 }
