@@ -1,7 +1,6 @@
 // pages/feed.js
 import Head from 'next/head';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export default function Feed() {
   const handleReact = () => alert('React feature coming soon!');
@@ -44,8 +43,6 @@ export default function Feed() {
           {/* More posts can be added dynamically here */}
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }
