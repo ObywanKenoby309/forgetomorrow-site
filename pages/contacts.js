@@ -1,24 +1,19 @@
-// pages/contacts.js
 import Head from 'next/head';
 import ContactsList from '../components/ContactsList';
 import RequestList from '../components/RequestList';
 import EventList from '../components/EventList';
 
 export default function Contacts() {
-  // Example static data for demo — you can replace with real API data later
   const contacts = [
     { id: 1, name: 'Jane Doe', status: 'Open to Opportunities', photo: 'https://via.placeholder.com/48' },
-    // Add more contacts here as needed
   ];
 
   const incomingRequests = [
     { id: 1, name: 'John Smith', photo: 'https://via.placeholder.com/40' },
-    // Add more incoming requests here
   ];
 
   const outgoingRequests = [
     { id: 1, name: 'Emily Rose', photo: 'https://via.placeholder.com/40' },
-    // Add more outgoing requests here
   ];
 
   const events = [
@@ -28,15 +23,27 @@ export default function Contacts() {
       datetime: 'Aug 15, 2025 | 2:00 PM - 4:00 PM',
       description: 'Online Webinar with industry coaches.',
     },
-    // Add more events here
   ];
 
-  // Placeholder handlers — replace with real logic or modal opening
-  const handleViewProfile = (contact) => alert(`View profile for ${contact.name} coming soon!`);
-  const handleAcceptRequest = (request) => alert(`Accept request from ${request.name} coming soon!`);
-  const handleDeclineRequest = (request) => alert(`Decline request from ${request.name} coming soon!`);
-  const handleCancelRequest = (request) => alert(`Cancel request to ${request.name} coming soon!`);
-  const handleEventDetails = (event) => alert(`Details for ${event.title} coming soon!`);
+  function handleViewProfile(contact) {
+    alert(`View profile for ${contact.name} coming soon!`);
+  }
+
+  function handleAcceptRequest(request) {
+    alert(`Accept request from ${request.name} coming soon!`);
+  }
+
+  function handleDeclineRequest(request) {
+    alert(`Decline request from ${request.name} coming soon!`);
+  }
+
+  function handleCancelRequest(request) {
+    alert(`Cancel request to ${request.name} coming soon!`);
+  }
+
+  function handleEventDetails(event) {
+    alert(`Details for ${event.title} coming soon!`);
+  }
 
   return (
     <>
