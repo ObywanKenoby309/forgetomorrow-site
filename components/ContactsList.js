@@ -1,7 +1,8 @@
+// components/ContactsList.js
+import React from 'react';
 import Image from 'next/image';
 
 export default function ContactsList({ contacts, onViewProfile }) {
-  // Handle keyboard for accessibility properly, avoid inline anonymous functions
   const handleKeyDown = (e, contact) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
