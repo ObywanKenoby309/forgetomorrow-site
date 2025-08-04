@@ -5,13 +5,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LandingHeader from '../components/LandingHeader';
 import LandingFooter from '../components/LandingFooter';
-import '../styles/globals.css'; // Make sure this path is correct!
+import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
-  // Pages that use Landing Header/Footer
-  const landingPages = ['/', '/login', '/signup'];
+  // Add '/about' here to use Landing Header/Footer
+  const landingPages = ['/', '/login', '/signup', '/about'];
 
   // Pages where footer is hidden
   const noFooterPages = ['/feed', '/pipeline'];
