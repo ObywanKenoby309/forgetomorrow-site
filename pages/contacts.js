@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import ContactsList from '../components/ContactsList';
-import RequestList from '../components/RequestList';
-import EventList from '../components/EventList';
+// import RequestList from '../components/RequestList';
+// import EventList from '../components/EventList';
 
 export default function Contacts() {
   const contacts = [
